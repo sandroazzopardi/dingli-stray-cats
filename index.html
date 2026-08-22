@@ -159,9 +159,12 @@ footer a:visited {
     gap: 20px;
     overflow-x: auto;
     overflow-y: hidden;
-    padding: 10px 5px 20px;
-    max-width: 1100px;
-    margin: 30px auto;
+    padding: 30px max(20px, calc((100vw - 1100px) / 2)) 30px;
+    width: 100%;
+    max-width: none;
+    margin: 30px 0;
+    box-sizing: border-box;
+    background-color: #0055A4;
     scroll-behavior: smooth;
 }
 
