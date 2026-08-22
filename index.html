@@ -194,7 +194,7 @@ async function loadFacebookFeed() {
 
     try {
         const response = await fetch(
-            "YOUR-CLOUDFLARE-WORKER-URL"
+            "https://dingli-stray-cats-feed.sandroazzopardi.workers.dev/"
         );
 
         const posts = await response.json();
