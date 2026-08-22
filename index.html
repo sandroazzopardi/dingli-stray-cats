@@ -132,6 +132,46 @@ footer a:visited {
             Follow us on Facebook
         </a>
 
+        <div id="facebook-feed">
+    <p>Loading Facebook posts...</p>
+</div>
+
+        <script>
+async function loadFacebookFeed() {
+    const feed = document.getElementById("facebook-feed");
+
+    try {
+        const response = await fetch(
+            "https://dingli-stray-cats-feed.sandroazzopardi.workers.dev/"
+        );
+
+        const images = await response.json();
+
+        feed.innerHTML = "";
+
+        images.forEach(image => {
+            const img = document.createElement("img");
+            img.src = image;
+            img.alt = "Dingli Stray Cats";
+            img.loading = "lazy";
+
+            img.style.width = "100%";
+            img.style.maxWidth = "500px";
+            img.style.display = "block";
+            img.style.margin = "0 auto 20px";
+
+            feed.appendChild(img);
+        });
+
+    } catch (error) {
+        feed.innerHTML = "<p>Unable to load Facebook posts.</p>";
+        console.error(error);
+    }
+}
+
+loadFacebookFeed();
+</script>
+
     </main>
 
     <footer>
