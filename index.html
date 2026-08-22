@@ -229,11 +229,18 @@ async function loadFacebookFeed() {
             content.className = "facebook-post-content";
 
             if (post.text) {
-                const text = document.createElement("div");
-                text.className = "facebook-post-text";
-                text.textContent = post.text;
-                content.appendChild(text);
-            }
+    const text = document.createElement("div");
+    text.className = "facebook-post-text";
+
+    const words = post.text.trim().split(/\s+/);
+    const preview = words.slice(0, 20).join(" ");
+
+    text.textContent = words.length > 20
+        ? preview + "..."
+        : preview;
+
+    content.appendChild(text);
+}
 
             if (post.date) {
                 const date = document.createElement("div");
