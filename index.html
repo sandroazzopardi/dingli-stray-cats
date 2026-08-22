@@ -68,16 +68,30 @@
 /* End */
 
 /* Email Button */
-        <a
-    href="mailto:domenicastraycats@gmail.com"
-    class="email-icon"
-    aria-label="Email Dingli Stray Cats">
+       .email-icon {
+    position: fixed;
+    top: 55px;
+    right: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+}
 
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-    </svg>
+.email-icon svg {
+    display: block;
+    width: 40px;
+    height: 40px;
+    fill: #555555;
+}
 
-</a>
+.email-icon:hover {
+    transform: translateY(-2px);
+}
 /* End */
         
         body {
@@ -272,33 +286,6 @@ footer a:visited {
     background: #bbb;
     border-radius: 10px;
 }
-
-    /* Email Icon Top Right */
-.email-icon {
-    position: fixed;
-    top: 55px;
-    right: 30px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    text-decoration: none;
-    z-index: 9999;
-    transition: transform 0.2s ease;
-}
-
-.email-icon svg {
-    display: block;
-    width: 40px;
-    height: 40px;
-    fill: #555555;
-}
-
-.email-icon:hover {
-    transform: translateY(-2px);
-}
-     /* End */
      
 </style>
 
@@ -389,7 +376,18 @@ loadFacebookFeed();
     </svg>
 </a>
         <!--End-->  
+<!--Email Link-->  
+    <a
+    href="mailto:domenicastraycats@gmail.com"
+    class="email-icon"
+    aria-label="Email Dingli Stray Cats">
 
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+
+</a>
+    <!--End-->  
     
     <footer>
         © 2026 Dingli Stray Cats<br>
