@@ -60,23 +60,28 @@
 
 <!--For Facebook Icon Top Right-->
         .facebook-icon {
-    position: absolute;
+    position: fixed;
     top: 25px;
     right: 30px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    height: 20px;
+    width: 40px;
+    height: 40px;
     text-decoration: none;
+    z-index: 1000;
     transition: transform 0.2s ease;
 }
 
 .facebook-icon svg {
     display: block;
-    width: 20px !important;
-    height: 20px !important;
+    width: 40px !important;
+    height: 40px !important;
     fill: #1877F2;
+}
+
+.facebook-icon:hover {
+    transform: translateY(-2px);
 }
 <!--End-->
         
@@ -273,25 +278,7 @@ footer a:visited {
 }
 
      <!--For Facebook Button-->
-  .facebook-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
 
-.facebook-icon svg {
-     width: 40px;
-    height: 40px;
-    fill: #1877F2;
-}
-
-.facebook-icon:hover {
-    transform: translateY(-2px);
-}
     <!--End-->
 </style>
 
