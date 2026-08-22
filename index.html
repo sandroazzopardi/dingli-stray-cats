@@ -41,17 +41,18 @@
 
          <!--For Facebook Icon Top Right-->
         .facebook-icon {
-    position: fixed;
-    top: 25px;
-    right: 30px;
+    position: fixed !important;
+    top: 25px !important;
+    right: 30px !important;
+    left: auto !important;
+    bottom: auto !important;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     text-decoration: none;
-    z-index: 1000;
-    transition: transform 0.2s ease;
+    z-index: 9999;
 }
 
 .facebook-icon svg {
