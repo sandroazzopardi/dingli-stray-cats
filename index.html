@@ -136,6 +136,58 @@ footer a:visited {
     <p>Loading Facebook posts...</p>
 </div>
 
+<style>
+#facebook-feed {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+.facebook-post {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+}
+
+.facebook-post img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    display: block;
+}
+
+.facebook-post-content {
+    padding: 15px;
+}
+
+.facebook-post-text {
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.facebook-post-date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.facebook-post a {
+    font-size: 13px;
+    color: #1877f2;
+    text-decoration: none;
+}
+
+@media (max-width: 700px) {
+    #facebook-feed {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
         <script>
 async function loadFacebookFeed() {
     const feed = document.getElementById("facebook-feed");
