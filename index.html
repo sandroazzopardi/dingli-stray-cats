@@ -138,14 +138,18 @@ footer a:visited {
 
 <style>
 #facebook-feed {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
     gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 5px 20px;
     max-width: 1100px;
     margin: 30px auto;
+    scroll-behavior: smooth;
 }
 
 .facebook-post {
+    flex: 0 0 320px;
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
@@ -181,10 +185,13 @@ footer a:visited {
     text-decoration: none;
 }
 
-@media (max-width: 700px) {
-    #facebook-feed {
-        grid-template-columns: 1fr;
-    }
+#facebook-feed::-webkit-scrollbar {
+    height: 8px;
+}
+
+#facebook-feed::-webkit-scrollbar-thumb {
+    background: #bbb;
+    border-radius: 10px;
 }
 </style>
 
