@@ -188,42 +188,74 @@ footer a:visited {
 }
 </style>
 
-        <script>
+      <script>
 async function loadFacebookFeed() {
     const feed = document.getElementById("facebook-feed");
 
     try {
         const response = await fetch(
-            "https://dingli-stray-cats-feed.sandroazzopardi.workers.dev/"
+            "YOUR-CLOUDFLARE-WORKER-URL"
         );
 
-        const images = await response.json();
+        const posts = await response.json();
 
         feed.innerHTML = "";
 
-        images.forEach(image => {
-            const img = document.createElement("img");
-            img.src = image;
-            img.alt = "Dingli Stray Cats";
-            img.loading = "lazy";
+        posts.forEach(post => {
+            const article = document.createElement("article");
+            article.className = "facebook-post";
 
-            img.style.width = "100%";
-            img.style.maxWidth = "500px";
-            img.style.display = "block";
-            img.style.margin = "0 auto 20px";
+            let content = "";
 
-            feed.appendChild(img);
+            if (post.image) {
+                content += `
+                    <img src="${post.image}" alt="Dingli Stray Cats">
+                `;
+            }
+
+            content += `<div class="facebook-post-content">`;
+
+            if (post.text) {
+                content += `
+                    <div class="facebook-post-text">
+                        ${post.text}
+                    </div>
+                `;
+            }
+
+            if (post.date) {
+                const date = new Date(post.date);
+
+                content += `
+                    <div class="facebook-post-date">
+                        ${date.toLocaleDateString()}
+                    </div>
+                `;
+            }
+
+            if (post.link) {
+                content += `
+                    <a href="${post.link}" target="_blank" rel="noopener">
+                        View on Facebook
+                    </a>
+                `;
+            }
+
+            content += `</div>`;
+
+            article.innerHTML = content;
+            feed.appendChild(article);
         });
 
     } catch (error) {
-        feed.innerHTML = "<p>Unable to load Facebook posts.</p>";
+        feed.innerHTML =
+            "<p>Unable to load Facebook posts.</p>";
         console.error(error);
     }
 }
 
 loadFacebookFeed();
 </script>
-
     </main>
 
     <footer>
