@@ -149,7 +149,7 @@ footer a:visited {
     border: 1px solid #ddd;
     border-radius: 10px;
     overflow: hidden;
-    background: #fff;
+    background: white;
 }
 
 .facebook-post img {
@@ -188,7 +188,7 @@ footer a:visited {
 }
 </style>
 
-      <script>
+     <script>
 async function loadFacebookFeed() {
     const feed = document.getElementById("facebook-feed");
 
@@ -205,45 +205,42 @@ async function loadFacebookFeed() {
             const article = document.createElement("article");
             article.className = "facebook-post";
 
-            let content = "";
-
             if (post.image) {
-                content += `
-                    <img src="${post.image}" alt="Dingli Stray Cats">
-                `;
+                const img = document.createElement("img");
+                img.src = post.image;
+                img.alt = "Dingli Stray Cats";
+                img.loading = "lazy";
+                article.appendChild(img);
             }
 
-            content += `<div class="facebook-post-content">`;
+            const content = document.createElement("div");
+            content.className = "facebook-post-content";
 
             if (post.text) {
-                content += `
-                    <div class="facebook-post-text">
-                        ${post.text}
-                    </div>
-                `;
+                const text = document.createElement("div");
+                text.className = "facebook-post-text";
+                text.textContent = post.text;
+                content.appendChild(text);
             }
 
             if (post.date) {
-                const date = new Date(post.date);
-
-                content += `
-                    <div class="facebook-post-date">
-                        ${date.toLocaleDateString()}
-                    </div>
-                `;
+                const date = document.createElement("div");
+                date.className = "facebook-post-date";
+                date.textContent =
+                    new Date(post.date).toLocaleDateString();
+                content.appendChild(date);
             }
 
             if (post.link) {
-                content += `
-                    <a href="${post.link}" target="_blank" rel="noopener">
-                        View on Facebook
-                    </a>
-                `;
+                const link = document.createElement("a");
+                link.href = post.link;
+                link.target = "_blank";
+                link.rel = "noopener";
+                link.textContent = "View on Facebook";
+                content.appendChild(link);
             }
 
-            content += `</div>`;
-
-            article.innerHTML = content;
+            article.appendChild(content);
             feed.appendChild(article);
         });
 
