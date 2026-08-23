@@ -149,18 +149,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
-
     min-height: 52px;
-    padding: 10px 60px 10px 20px;
-
+    padding: 10px 20px;
     cursor: pointer;
     user-select: none;
-
     font-size: 18px;
     font-weight: 600;
 }
 
+        .top-help-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+        
 /* Arrow */
 
 .help-chevron {
@@ -169,8 +172,7 @@
     border-right: 2px solid white;
     border-bottom: 2px solid white;
     transform: rotate(45deg);
-    margin: -5px 10px 0 10px;
-    flex-shrink: 0;
+    margin-top: -5px;
 }
 
 /* Expandable area */
@@ -359,13 +361,17 @@ footer a:visited {
 
     <div class="top-help-header" onclick="toggleTopHelp()">
 
-    <span class="help-chevron"></span>
+        <div class="top-help-title">
 
-    <span>CLICK & HELP OUR CATS</span>
+            <span class="help-chevron"></span>
 
-    <span class="help-chevron"></span>
+            <span>CLICK TO HELP OUR CATS</span>
 
-</div>
+            <span class="help-chevron"></span>
+
+        </div>
+
+    </div>
 
 
     <div class="top-help-content">
