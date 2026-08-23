@@ -108,15 +108,20 @@
 }
 
         main {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 10px 20px 120px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 20px 120px;
         }
 
+.top-section {
+    position: relative;
+    width: 100%;
+}
+       
   .top-red-bar {
     width: 100%;
     height: 14px;
@@ -126,11 +131,11 @@
     flex-shrink: 0;
 }
 
-        .logo {
-            width: 220px;
-            max-width: 70%;
-            height: auto;
-            margin-bottom: 15px;
+  .logo {
+    width: 220px;
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 15px;
         }
 
         .message {
@@ -218,6 +223,33 @@ footer a:visited {
         
     <main>
         <div class="top-red-bar"></div>
+
+<!--FB Logo Button-->  
+       <a
+        href="https://www.facebook.com/dinglistraycats"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="facebook-icon"
+        aria-label="Dingli Stray Cats on Facebook">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.007 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.313 0 2.686.236 2.686.236v2.971h-1.515c-1.491 0-1.956.928-1.956 1.881v2.26h3.328l-.532 3.495h-2.796V24C19.612 23.08 24 18.092 24 12.073z"/>
+        </svg>
+        </a>
+<!--End-->  
+        
+<!--Email Link-->  
+        <a
+        href="mailto:domenicastraycatsdingli@gmail.com"
+        class="email-icon"
+        aria-label="Email Dingli Stray Cats">
+
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+
+        </a>
+<!--End-->  
 
         <img src="Dingli Stray Cats Logo New Badge.png" alt="Dingli Stray Cats Badge Logo" class="logo">
 
@@ -391,31 +423,6 @@ loadFacebookFeed();
 </script>
     </main>
 
-     <!--FB Logo Button-->  
-       <a
-    href="https://www.facebook.com/dinglistraycats"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="facebook-icon"
-    aria-label="Dingli Stray Cats on Facebook">
-
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.007 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.313 0 2.686.236 2.686.236v2.971h-1.515c-1.491 0-1.956.928-1.956 1.881v2.26h3.328l-.532 3.495h-2.796V24C19.612 23.08 24 18.092 24 12.073z"/>
-    </svg>
-</a>
-        <!--End-->  
-<!--Email Link-->  
-    <a
-    href="mailto:domenicastraycatsdingli@gmail.com"
-    class="email-icon"
-    aria-label="Email Dingli Stray Cats">
-
-    <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
-    </svg>
-
-</a>
-    <!--End-->  
     
     <footer>
         © 2026 Dingli Stray Cats<br>
