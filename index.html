@@ -163,15 +163,14 @@
 
 /* Arrow */
 
-.top-help-arrow {
-    position: absolute;
-    right: 20px;
-
-    font-size: 25px;
-    font-weight: 400;
-    line-height: 1;
-
-    transition: transform 0.25s ease;
+.help-chevron {
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(45deg);
+    margin: -5px 10px 0 10px;
+    flex-shrink: 0;
 }
 
 /* Expandable area */
@@ -360,11 +359,13 @@ footer a:visited {
 
     <div class="top-help-header" onclick="toggleTopHelp()">
 
-        <span>HELP THE DINGLI CATS</span>
+    <span class="help-chevron"></span>
 
-        <span class="top-help-arrow">⌄</span>
+    <span>HELP THE DINGLI CATS</span>
 
-    </div>
+    <span class="help-chevron"></span>
+
+</div>
 
 
     <div class="top-help-content">
