@@ -123,14 +123,121 @@
     max-width: 1800px;
 }
        
-  .top-red-bar {
+/* =========================
+   TOP HELP PANEL
+   ========================= */
+
+.top-help {
     width: 100%;
     max-width: 1800px;
-    height: 14px;
-    margin: 0 0 15px 0;
-    background-color: #B71819;
+    margin: 0 auto 15px auto;
+    background: #B71819;
+    color: white;
     border-radius: 0 0 10px 10px;
+    overflow: hidden;
     flex-shrink: 0;
+
+    /* Sticky while scrolling */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Red clickable header */
+
+.top-help-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    min-height: 52px;
+    padding: 10px 60px 10px 20px;
+
+    cursor: pointer;
+    user-select: none;
+
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Arrow */
+
+.top-help-arrow {
+    position: absolute;
+    right: 20px;
+
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+
+    transition: transform 0.25s ease;
+}
+
+/* Expandable area */
+
+.top-help-content {
+    max-height: 0;
+    overflow: hidden;
+
+    background: #FFF7F7;
+    color: #333333;
+
+    transition: max-height 0.4s ease;
+}
+
+/* Content inside the panel */
+
+.top-help-inner {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 10px 25px 25px;
+}
+
+/* Individual options */
+
+.top-help-option {
+    padding: 16px 0;
+    border-top: 1px solid #eeeeee;
+}
+
+.top-help-option-title {
+    color: #B71819;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.top-help-option-text {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Photo + text */
+
+.top-help-option-with-image {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.top-help-option-with-image img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* Expanded state */
+
+.top-help.open .top-help-content {
+    max-height: 700px;
+}
+
+.top-help.open .top-help-arrow {
+    transform: rotate(180deg);
 }
 
   .logo {
@@ -196,7 +303,24 @@
         @media (max-width: 600px) {
             main {
                 padding: 30px 20px;
-            }
+                .top-help-header {
+                min-height: 48px;
+                font-size: 16px;
+                }
+
+                .top-help-inner {
+                padding: 5px 18px 20px;
+                }
+
+                .top-help-option-text {
+                font-size: 14px;
+                }
+
+                .top-help-option-with-image img {
+                width: 65px;
+                height: 65px;
+                }
+            }    
 
             .logo {
                 width: 180px;
@@ -228,7 +352,111 @@ footer a:visited {
     <main>
        <div class="top-section">
 
-        <div class="top-red-bar"></div>
+       <!-- =========================
+     TOP HELP PANEL
+     ========================= -->
+
+<div class="top-help" id="topHelp">
+
+    <div class="top-help-header" onclick="toggleTopHelp()">
+
+        <span>HELP THE DINGLI CATS</span>
+
+        <span class="top-help-arrow">⌄</span>
+
+    </div>
+
+
+    <div class="top-help-content">
+
+        <div class="top-help-inner">
+
+
+            <!-- DONATE -->
+
+            <div class="top-help-option">
+
+                <div class="top-help-option-title">
+                    DONATE
+                </div>
+
+                <div class="top-help-option-text">
+
+                    Support Dingli Stray Cats through:
+
+                    <br><br>
+
+                    <strong>Revolut:</strong>
+                    YOUR REVOLUT DETAILS HERE
+
+                    <br><br>
+
+                    <strong>BOV Pay:</strong>
+                    YOUR BOV PAY DETAILS HERE
+
+                </div>
+
+            </div>
+
+
+            <!-- BCRS -->
+
+            <div class="top-help-option top-help-option-with-image">
+
+                <img
+                    src="bcrs-bottle.png"
+                    alt="BCRS bottle">
+
+                <div>
+
+                    <div class="top-help-option-title">
+                        BCRS BOTTLES
+                    </div>
+
+                    <div class="top-help-option-text">
+                        Return your eligible bottles and cans
+                        through BCRS and donate the refund to
+                        Dingli Stray Cats.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAT FOOD -->
+
+            <div class="top-help-option top-help-option-with-image">
+
+                <img
+                    src="cat-food.png"
+                    alt="Cat food">
+
+                <div>
+
+                    <div class="top-help-option-title">
+                        CAT FOOD
+                    </div>
+
+                    <div class="top-help-option-text">
+                        You can also support our colonies by
+                        donating cat food.
+                        More information on where and what
+                        to donate can be provided here.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- END TOP HELP PANEL -->
 
         <!-- FB Logo Button -->
         <a
@@ -355,7 +583,17 @@ footer a:visited {
      
 </style>
 
-     <script>
+<script>
+function toggleTopHelp() {
+
+    const panel = document.getElementById("topHelp");
+
+    panel.classList.toggle("open");
+
+}
+</script>
+        
+<script>
 async function loadFacebookFeed() {
     const feed = document.getElementById("facebook-feed");
 
