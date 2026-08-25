@@ -1,1 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Become a Volunteer | Dingli Stray Cats</title>
+
+    <!-- Google Fonts Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/JPG" href="DingliCats_FAV.JPG">
+
+    <meta name="description" content="Become a volunteer with Dingli Stray Cats and help care for the stray and feral cats of Dingli, Malta.">
+    <meta name="keywords" content="Dingli Stray Cats volunteer, volunteer Malta cats, stray cats Malta, TNR volunteer Dingli">
+    <meta name="author" content="Dingli Stray Cats">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 10px 20px 80px;
+        }
+
+        .top-section {
+            position: relative;
+            width: 100%;
+            max-width: 1800px;
+        }
+
+        /* =========================
+           TOP HELP PANEL
+           ========================= */
+
+        .top-help {
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto 15px auto;
+            background: #B71819;
+            color: white;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+
+            /* Sticky while scrolling */
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-help-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 28px;
+            padding: 5px 10px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .top-help-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .help-chevron {
+            width: 9px;
+            height: 9px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(45deg);
+            margin-top: -5px;
+        }
+
+        .top-help-content {
+            max-height: 0;
+            overflow: hidden;
+            background: #FCE8E8;
+            color: #333333;
+            transition: max-height 0.4s ease;
+        }
+
+        .top-help-inner {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 25px 12px;
+        }
+
+        .top-help-option {
+            padding: 10px 0;
+            border-top: 1px solid rgba(183, 24, 25, 0.12);
+        }
+
+        .top-help-option-title {
+            color: #B71819;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .top-help-option-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #555555;
+        }
+
+        .top-help-option-with-image {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-help-option-with-image img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .top-help.open .top-help-content {
+            max-height: 700px;
+        }
+
+        .logo {
+            width: 220px;
+            max-width: 70%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        /* =========================
+           FACEBOOK & EMAIL BUTTONS
+           ========================= */
+
+        .facebook-icon {
+            position: absolute;
+            top: 55px;
+            right: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .facebook-icon svg {
+            display: block;
+            width: 40px;
+            height: 40px;
+            fill: #1877F2;
+        }
+
+        .facebook-icon:hover,
+        .email-icon:hover {
+            transform: translateY(-2px);
+        }
+
+        .email-icon {
+            position: absolute;
+            top: 105px;
+            right: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            text-decoration: none;
+            z-index: 10;
+        }
+
+        .email-icon svg {
+            display: block;
+            width: 40px;
+            height: 40px;
+            fill: #555555;
+        }
+
+        /* =========================
+           PAGE INTRODUCTION
+           ========================= */
+
+        .message {
+            max-width: 650px;
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            color: #73A6E0;
+            padding: 15px 25px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            position: relative;
+            z-index: 2;
+        }
+
+        /* =========================
+           VOLUNTEER HEADER
+           ========================= */
+
+        .activity-banner {
+            width: 100%;
+            max-width: 1800px;
+            background-color: #B71819;
+            color: white;
+            text-align: center;
+            padding: 18px 25px;
+            border-radius: 10px 10px 0 0;
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.5;
+            font-weight: 500;
+        }
+
+        .activity-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           VOLUNTEER CONTENT
+           ========================= */
+
+        .volunteer-content {
+            width: 100%;
+            max-width: 1200px;
+            background: #FAFAFA;
+            padding: 30px 25px 35px;
+        }
+
+        .volunteer-intro {
+            max-width: 750px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            line-height: 1.65;
+            color: #555555;
+        }
+
+        .volunteer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .volunteer-card {
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 10px;
+            padding: 22px 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.10);
+            text-align: center;
+        }
+
+        .volunteer-card h3 {
+            color: #B71819;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .volunteer-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #555555;
+        }
+
+        .get-in-touch {
+            margin-top: 30px;
+        }
+
+        .get-in-touch p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #555555;
+            margin-bottom: 15px;
+        }
+
+        .email-button {
+            display: inline-block;
+            padding: 13px 28px;
+            background: #B71819;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 600;
+            transition: opacity 0.2s ease;
+        }
+
+        .email-button:hover {
+            opacity: 0.85;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+            color: #888888;
+        }
+
+        footer a,
+        footer a:hover,
+        footer a:visited {
+            color: #888888;
+        }
+
+        @media (max-width: 600px) {
+            main {
+                padding: 10px 20px 50px;
+            }
+
+            .top-help-header {
+                min-height: 36px;
+                font-size: 16px;
+            }
+
+            .top-help-inner {
+                padding: 5px 18px 20px;
+            }
+
+            .top-help-option-text {
+                font-size: 14px;
+            }
+
+            .top-help-option-with-image img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .logo {
+                width: 180px;
+                margin-bottom: 20px;
+            }
+
+            .message {
+                font-size: 19px;
+                line-height: 1.55;
+                margin-bottom: 25px;
+                padding: 14px 20px;
+            }
+
+            .facebook-icon {
+                top: 55px;
+                right: 8px;
+            }
+
+            .email-icon {
+                top: 105px;
+                right: 8px;
+            }
+
+            .activity-banner {
+                padding: 16px 18px;
+                font-size: 15px;
+            }
+
+            .activity-title {
+                font-size: 21px;
+            }
+
+            .volunteer-content {
+                padding: 25px 15px 30px;
+            }
+
+            .volunteer-intro {
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 25px;
+            }
+
+            .volunteer-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .volunteer-card {
+                padding: 20px 16px;
+            }
+
+            .volunteer-card h3 {
+                font-size: 17px;
+            }
+
+            .volunteer-card p {
+                font-size: 14px;
+            }
+
+            .get-in-touch p {
+                font-size: 16px;
+            }
+
+            .email-button {
+                font-size: 16px;
+                padding: 12px 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<main>
+
+    <div class="top-section">
+
+        <!-- =========================
+             TOP HELP PANEL
+             ========================= -->
+
+        <div class="top-help" id="topHelp">
+
+            <div class="top-help-header" onclick="toggleTopHelp()">
+                <div class="top-help-title">
+                    <span class="help-chevron"></span>
+                    <span>DONATE &amp; HELP OUR CATS</span>
+                    <span class="help-chevron"></span>
+                </div>
+            </div>
+
+            <div class="top-help-content">
+                <div class="top-help-inner">
+
+                    <!-- DONATE -->
+                    <div class="top-help-option">
+
+                        <div class="top-help-option-title">
+                            Even a small contribution can make a big difference
+                        </div>
+
+                        <div class="top-help-option-text">
+
+                            Your donation helps provide food, and other essential &amp; veterinary care for stray and feral cats.
+
+                            <br><br>
+
+                            <strong>Revolut:</strong>
+                            +356 79253603
+
+                            <br>
+
+                            <strong>BOV Pay:</strong>
+                            +356 79253603
+
+                        </div>
+
+                    </div>
+
+                    <!-- BCRS -->
+                    <div class="top-help-option top-help-option-with-image">
+
+                        <img
+                            src="bcrs-bottles-standing.jpg"
+                            alt="BCRS bottle donations supporting stray cats in Malta">
+
+                        <div>
+
+                            <div class="top-help-option-title">
+                                BCRS BOTTLES
+                            </div>
+
+                            <div class="top-help-option-text">
+                                Donate your eligible BCRS bottles and cans. The proceeds help us provide food and care.
+                                Please get in touch so we can arrange pick-up.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- CAT FOOD -->
+                    <div class="top-help-option top-help-option-with-image">
+
+                        <img
+                            src="cat-food-transparent.PNG"
+                            alt="Cat food donated for stray cats in Malta">
+
+                        <div>
+
+                            <div class="top-help-option-title">
+                                CAT FOOD
+                            </div>
+
+                            <div class="top-help-option-text">
+                                You can also support our colonies by
+                                donating cat food (dry &amp; wet).
+                                Please get in touch so we can arrange pick-up.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- END TOP HELP PANEL -->
+
+
+        <!-- Facebook Logo Button -->
+        <a
+            href="https://www.facebook.com/dinglistraycats"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="facebook-icon"
+            aria-label="Dingli Stray Cats on Facebook">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.007 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.313 0 2.686.236 2.686.236v2.971h-1.515c-1.491 0-1.956.928-1.956 1.881v2.26h3.328l-.532 3.495h-2.796V24C19.612 23.08 24 18.092 24 12.073z"/>
+            </svg>
+
+        </a>
+
+
+        <!-- Email Link -->
+        <a
+            href="mailto:domenicastraycatsdingli@gmail.com"
+            class="email-icon"
+            aria-label="Email Dingli Stray Cats">
+
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+
+        </a>
+
+
+        <!-- Logo -->
+        <img
+            src="Dingli Stray Cats Logo New Badge.png"
+            alt="Dingli Stray Cats – stray and feral cat welfare in Malta"
+            class="logo">
+
+    </div>
+
+
+    <h1 class="visually-hidden">
+        Dingli Stray Cats – Become a Volunteer
+    </h1>
+
+
+    <p class="message">
+        Help us care for the stray and feral cats of Dingli, Malta.
+        <br>
+        Your time and support can make a real difference.
+    </p>
+
+
+    <!-- =========================
+         VOLUNTEER BANNER
+         ========================= -->
+
+    <div class="activity-banner">
+
+        <h2 class="activity-title">BECOME A VOLUNTEER</h2>
+
+        Whether you can spare a little time regularly or simply help when needed,
+        there are many ways you can support our cats. Get in touch and let us know how you would like to help.
+
+    </div>
+
+
+    <!-- =========================
+         VOLUNTEER CONTENT
+         ========================= -->
+
+    <section class="volunteer-content">
+
+        <p class="volunteer-intro">
+            Caring for stray and feral cats is a community effort.
+            Even a small amount of your time can help us keep our colonies fed,
+            cared for and monitored.
+        </p>
+
+
+        <div class="volunteer-grid">
+
+            <div class="volunteer-card">
+
+                <h3>FEEDING &amp; COLONY CARE</h3>
+
+                <p>
+                    Help with feeding, checking colonies and keeping feeding areas
+                    clean and tidy.
+                </p>
+
+            </div>
+
+
+            <div class="volunteer-card">
+
+                <h3>TRAP-NEUTER-RETURN (TNR)</h3>
+
+                <p>
+                    Assist with trapping, transporting cats and returning them
+                    safely after veterinary treatment.
+                </p>
+
+            </div>
+
+
+            <div class="volunteer-card">
+
+                <h3>BCRS &amp; FOOD COLLECTIONS</h3>
+
+                <p>
+                    Help collect donated bottles, cans and cat food
+                    that support our colonies.
+                </p>
+
+            </div>
+
+
+            <div class="volunteer-card">
+
+                <h3>OTHER WAYS TO HELP</h3>
+
+                <p>
+                    There are many other ways to contribute, even if you have
+                    limited time. Let us know what you can offer.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="get-in-touch">
+
+            <p>
+                Interested in helping? Get in touch with us and we can discuss
+                how you can become involved.
+            </p>
+
+            <a
+                href="mailto:domenicastraycatsdingli@gmail.com"
+                class="email-button">
+                GET IN TOUCH
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 Dingli Stray Cats<br>
+
+    <a
+        href="https://www.sandroazzopardi.com"
+        target="_blank"
+        rel="noopener noreferrer">
+        www.sandroazzopardi.com
+    </a>
+
+</footer>
+
+
+<script>
+    function toggleTopHelp() {
+
+        const panel = document.getElementById("topHelp");
+
+        panel.classList.toggle("open");
+
+    }
+</script>
+
+</body>
+</html>
