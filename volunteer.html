@@ -420,6 +420,41 @@
             }    
 
         /* =========================
+           BACK TO HOME BUTTON
+           ========================= */
+
+        .back-home-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #B71819;
+            color: #ffffff;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin-top: 25px;
+        }
+
+        .back-home-button span {
+            font-size: 21px;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .back-home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        .back-home-button:hover span {
+            transform: translateX(-4px);
+        }
+
+        /* =========================
            FOOTER
            ========================= */
 
@@ -883,6 +918,13 @@
     Thank you for caring and for considering giving your time. Every helping hand makes a difference to our cats.
 </p>
 
+            <a
+                href="https://dinglistraycats.org"
+                class="back-home-button"
+                aria-label="Back to Dingli Stray Cats homepage">
+                <span>←</span> BACK TO HOME
+            </a>
+
         </div>
 
 
@@ -929,4 +971,3 @@
 
 
 </body>
-</html>
