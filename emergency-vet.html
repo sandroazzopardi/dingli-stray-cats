@@ -1,1 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBVDYR5Q0G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JBVDYR5Q0G');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Emergency Vet Malta | National Veterinary Emergency Service</title>
+    <meta name="description" content="Emergency veterinary service in Malta. Find the national veterinary emergency helpline, out-of-hours service, fees and information about possible reimbursement.">
+    <meta name="keywords" content="emergency vet Malta, emergency veterinary Malta, 24 hour vet Malta, emergency vet clinic Malta, veterinary emergency service Malta, 153 veterinary Malta, emergency vet fees Malta, vet reimbursement Malta">
+    <meta name="author" content="Dingli Stray Cats">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/JPG" href="DingliCats_FAV.JPG">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { min-height: 100%; }
+        body { font-family: 'Poppins', sans-serif; background:#f5f5f5; color:#333; }
+
+        .top-help { width:100%; max-width:1800px; margin:0 auto 15px; background:#B71819; color:white; border-radius:0 0 10px 10px; overflow:hidden; position:sticky; top:0; z-index:1000; }
+        .top-help-header { display:flex; align-items:center; justify-content:center; min-height:28px; padding:5px 10px; cursor:pointer; user-select:none; font-size:18px; font-weight:600; }
+        .top-help-title { display:flex; align-items:center; justify-content:center; gap:10px; }
+        .help-chevron { width:9px; height:9px; border-right:2px solid white; border-bottom:2px solid white; transform:rotate(45deg); margin-top:-5px; }
+        .top-help-content { max-height:0; overflow:hidden; background:#FCE8E8; color:#333; transition:max-height .4s ease; }
+        .top-help-inner { max-width:650px; margin:0 auto; padding:0 25px 12px; }
+        .top-help-option { padding:10px 0; border-top:1px solid rgba(183,24,25,.12); }
+        .top-help-option-title { color:#B71819; font-size:17px; font-weight:700; margin-bottom:3px; }
+        .top-help-option-text { font-size:15px; line-height:1.5; color:#555; }
+        .top-help.open .top-help-content { max-height:700px; }
+
+        .top-section { position:relative; width:100%; max-width:1800px; text-align:center; }
+        .facebook-icon, .email-icon { position:absolute; right:15px; display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; text-decoration:none; z-index:10; transition:transform .2s ease; }
+        .facebook-icon { top:55px; }
+        .email-icon { top:105px; }
+        .facebook-icon svg, .email-icon svg { display:block; width:40px; height:40px; }
+        .facebook-icon svg { fill:#1877F2; }
+        .email-icon svg { fill:#555; }
+        .facebook-icon:hover, .email-icon:hover { transform:translateY(-2px); }
+        .logo { width:220px; max-width:70%; height:auto; margin:10px 0 5px; }
+
+        main { width:100%; max-width:1800px; margin:0 auto; padding:10px 20px 70px; }
+        .page-intro { max-width:950px; margin:0 auto 25px; text-align:center; background:white; border-radius:12px; padding:25px 25px 28px; box-shadow:0 6px 20px rgba(0,0,0,.12); }
+        .page-intro h1 { color:#B71819; font-size:34px; line-height:1.25; margin-bottom:12px; }
+        .page-intro p { color:#555; font-size:18px; line-height:1.6; }
+
+        .emergency-panel { max-width:950px; margin:0 auto 25px; background:#B71819; color:white; border-radius:12px; padding:30px 25px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,.18); }
+        .emergency-panel h2 { font-size:25px; margin-bottom:6px; }
+        .emergency-panel .phone { display:inline-block; color:white; text-decoration:none; font-size:38px; font-weight:700; line-height:1.2; margin:8px 0; }
+        .emergency-panel .phone:hover { text-decoration:underline; }
+        .emergency-panel p { font-size:16px; line-height:1.5; }
+
+        .content-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+        .info-card { background:white; border-radius:12px; padding:25px; box-shadow:0 6px 20px rgba(0,0,0,.10); }
+        .info-card.full-width { grid-column:1/-1; }
+        .info-card h2 { color:#B71819; font-size:24px; line-height:1.3; margin-bottom:12px; }
+        .info-card p { color:#555; font-size:16px; line-height:1.65; margin-bottom:10px; }
+        .info-card ul { padding-left:22px; color:#555; }
+        .info-card li { font-size:16px; line-height:1.6; margin-bottom:7px; }
+
+        .hours-box { background:#EEF4FA; border-radius:10px; padding:18px 20px; margin-top:12px; }
+        .fees-card { border:3px solid #B71819; }
+        .fees-warning { background:#FCE8E8; border-radius:10px; padding:18px 20px; margin:12px 0 18px; }
+        .fees-warning strong { color:#B71819; }
+        .upfront { font-size:19px !important; font-weight:700; color:#B71819 !important; }
+        .reimbursement { background:#f5f5f5; border-left:5px solid #73A6E0; padding:16px 18px; border-radius:0 8px 8px 0; margin-top:15px; }
+        .important-note { background:#fff8e6; border-left:5px solid #B71819; padding:16px 18px; border-radius:0 8px 8px 0; margin-top:15px; }
+        .official-link { display:inline-block; margin-top:8px; color:#1877F2; font-weight:600; text-decoration:none; }
+        .official-link:hover { text-decoration:underline; }
+        .last-updated { max-width:1100px; margin:25px auto 0; text-align:center; font-size:13px; color:#888; }
+
+        footer { text-align:center; padding:25px 20px; font-size:14px; color:#888; }
+        footer a, footer a:hover, footer a:visited { color:#888; }
+
+        @media (max-width:700px) {
+            .top-help-header { min-height:36px; font-size:16px; }
+            .top-help-inner { padding:5px 18px 20px; }
+            .top-help-option-text { font-size:14px; }
+            .logo { width:180px; }
+            main { padding:10px 15px 55px; }
+            .page-intro { padding:22px 18px 24px; }
+            .page-intro h1 { font-size:27px; }
+            .page-intro p { font-size:16px; }
+            .emergency-panel { padding:25px 18px; }
+            .emergency-panel h2 { font-size:22px; }
+            .emergency-panel .phone { font-size:31px; }
+            .emergency-panel p { font-size:15px; }
+            .content-grid { grid-template-columns:1fr; gap:15px; }
+            .info-card.full-width { grid-column:auto; }
+            .info-card { padding:20px 18px; }
+            .info-card h2 { font-size:22px; }
+            .info-card p, .info-card li { font-size:15px; }
+            .facebook-icon { top:50px; right:10px; }
+            .email-icon { top:98px; right:10px; }
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="top-section">
+        <div class="top-help" id="topHelp">
+            <div class="top-help-header" onclick="toggleTopHelp()">
+                <div class="top-help-title">
+                    <span class="help-chevron"></span>
+                    <span>DONATE & HELP OUR CATS</span>
+                    <span class="help-chevron"></span>
+                </div>
+            </div>
+            <div class="top-help-content">
+                <div class="top-help-inner">
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">Even a small contribution can make a big difference</div>
+                        <div class="top-help-option-text">
+                            Your donation helps provide food, and other essential & veterinary care for stray and feral cats.
+                            <br><br>
+                            <strong>Revolut:</strong> +356 7925 3603<br>
+                            <strong>BOV Pay:</strong> +356 7925 3603
+                        </div>
+                    </div>
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">BCRS BOTTLES</div>
+                        <div class="top-help-option-text">Donate your eligible BCRS bottles and cans. The proceeds help us provide food and care. Please get in touch so we can arrange pick-up.</div>
+                    </div>
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">CAT FOOD</div>
+                        <div class="top-help-option-text">You can also support our colonies by donating cat food (dry & wet). Please get in touch so we can arrange pick-up.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://www.facebook.com/dinglistraycats" target="_blank" rel="noopener noreferrer" class="facebook-icon" aria-label="Dingli Stray Cats on Facebook" onclick="gtag('event','facebook_click',{link_location:'top_icon'});">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.007 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.313 0 2.686.236 2.686.236v2.971h-1.515c-1.491 0-1.956.928-1.956 1.881v2.26h3.328l-.532 3.495h-2.796V24C19.612 23.08 24 18.092 24 12.073z"/></svg>
+        </a>
+
+        <a href="mailto:domenicastraycatsdingli@gmail.com" class="email-icon" aria-label="Email Dingli Stray Cats">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+
+        <img src="Dingli Stray Cats Logo New Badge.png" alt="Dingli Stray Cats" class="logo">
+    </div>
+
+    <section class="page-intro">
+        <h1>Emergency Vet Malta</h1>
+        <p>Need urgent veterinary assistance outside normal veterinary opening hours? Malta has a National Veterinary Emergency Service for pets and small animals.</p>
+    </section>
+
+    <section class="emergency-panel">
+        <h2>National Veterinary Emergency Helpline</h2>
+        <a class="phone" href="tel:153">153 + Extension 22</a>
+        <p>Call the freephone <strong>153</strong> and select <strong>Extension 22</strong>. Trained personnel will assess the situation, provide initial guidance where appropriate, and refer you to the most suitable veterinary assistance.</p>
+    </section>
+
+    <div class="content-grid">
+        <section class="info-card">
+            <h2>Out-of-Hours Emergency Service</h2>
+            <p>The National Veterinary Emergency Service is designed to provide emergency assistance especially outside normal veterinary opening hours and during public holidays.</p>
+            <div class="hours-box">
+                <p><strong>Night service</strong></p>
+                <p><strong>8:00 PM – 8:00 AM</strong></p>
+                <p>The service also covers Sundays and Public Holidays through the designated emergency arrangements.</p>
+            </div>
+            <p>Call <strong>153 + Extension 22</strong> first so that your situation can be assessed and you can be directed to the appropriate emergency veterinary service.</p>
+        </section>
+
+        <section class="info-card fees-card">
+            <h2>Important: Emergency Vet Fees</h2>
+            <div class="fees-warning">
+                <p><strong>Emergency veterinary care is not automatically free.</strong></p>
+                <p class="upfront">The owner must pay the consultation cost upfront.</p>
+            </div>
+            <p>The consultation fee can differ depending on the <strong>day and time of the night</strong> at which the emergency consultation takes place.</p>
+            <p>For the current fee applicable to your situation, contact <strong>153 + Extension 22</strong> before attending.</p>
+            <div class="reimbursement">
+                <p><strong>Possible reimbursement</strong></p>
+                <p>The Government has a state-funded emergency veterinary care support programme. In <strong>genuine emergency cases</strong>, the programme can reimburse eligible pet owners for the cost of an emergency consultation.</p>
+                <p><strong>Reimbursement is not automatic.</strong> The case must meet the applicable conditions and be deemed a genuine emergency.</p>
+            </div>
+        </section>
+
+        <section class="info-card">
+            <h2>Important for Dog Owners</h2>
+            <p>If you are taking a dog for emergency veterinary care, make sure the dog is properly <strong>identified and registered</strong>.</p>
+            <p>Registration requirements can affect eligibility for reimbursement. A dog should not be assumed to qualify for reimbursement if the applicable registration requirements have not been met.</p>
+            <p>If you are unsure whether your dog meets the requirements, ask the emergency service about eligibility.</p>
+        </section>
+
+        <section class="info-card">
+            <h2>What About Stray Animals?</h2>
+            <p>The government reimbursement programme is intended for <strong>pet owners</strong>.</p>
+            <div class="important-note">
+                <p><strong>If you are dealing with a stray animal, do not assume that the emergency consultation will be reimbursed under this programme.</strong></p>
+            </div>
+            <p>Different arrangements may apply to stray animals. Contact the appropriate animal welfare service for guidance if you find an injured stray animal.</p>
+        </section>
+
+        <section class="info-card full-width">
+            <h2>When Should You Call?</h2>
+            <p>The emergency service is intended for situations where an animal may require urgent veterinary attention.</p>
+            <ul>
+                <li>Serious injury or trauma</li>
+                <li>Difficulty breathing</li>
+                <li>Severe or uncontrolled bleeding</li>
+                <li>Collapse or loss of consciousness</li>
+                <li>Sudden serious illness or deterioration</li>
+                <li>Other situations where you believe your pet needs urgent veterinary care</li>
+            </ul>
+            <p>If you are unsure whether a situation is an emergency, call <strong>153 + Extension 22</strong> and explain what has happened. The triage service can provide guidance.</p>
+        </section>
+
+        <section class="info-card full-width">
+            <h2>Before Attending the Emergency Service</h2>
+            <ul>
+                <li>Call <strong>153 + Extension 22</strong> first.</li>
+                <li>Explain the animal's condition and what has happened.</li>
+                <li>Follow the instructions provided by the emergency service.</li>
+                <li>Be prepared to <strong>pay the consultation fee upfront</strong>.</li>
+                <li>Keep your invoice and payment documentation if you intend to apply for reimbursement.</li>
+                <li>Do not assume that reimbursement will be granted unless the case qualifies as a genuine emergency.</li>
+            </ul>
+        </section>
+
+        <section class="info-card full-width">
+            <h2>Official Information</h2>
+            <p>This page is intended as a quick reference to help pet owners find emergency veterinary assistance in Malta.</p>
+            <p>Emergency service arrangements, participating clinics, fees and reimbursement conditions may change. Always check the latest official information before relying on the details above.</p>
+            <a class="official-link" href="https://vsc.gov.mt/24-7-emergency-service/" target="_blank" rel="noopener noreferrer">Official National Veterinary Emergency Service information →</a><br>
+            <a class="official-link" href="https://vsd.gov.mt/en/vet-emergency-services/" target="_blank" rel="noopener noreferrer">Veterinary Services Directorate – Emergency Services →</a>
+        </section>
+    </div>
+
+    <div class="last-updated">Information checked against official sources — August 2026</div>
+</main>
+
+<footer>
+    © 2026 Dingli Stray Cats<br>
+    <a href="https://www.sandroazzopardi.com" target="_blank" rel="noopener noreferrer">www.sandroazzopardi.com</a>
+</footer>
+
+<script>
+function toggleTopHelp() {
+    document.getElementById('topHelp').classList.toggle('open');
+}
+</script>
+</body>
+</html>
 
