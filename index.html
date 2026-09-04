@@ -750,6 +750,67 @@ footer a:visited {
 }
 
 
+
+/* WHO ARE WE CTA */
+
+.who-are-we-cta {
+    background: #ffffff;
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 38px 20px 42px;
+    text-align: center;
+}
+
+.who-are-we-cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.who-are-we-cta h2 {
+    color: #333333;
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 8px;
+}
+
+.who-are-we-cta p {
+    color: #666666;
+    font-size: 16px;
+    margin: 0 0 20px;
+}
+
+.who-are-we-cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    background: #B71819;
+    color: #ffffff;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.who-are-we-cta-button span {
+    font-size: 19px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.who-are-we-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 16px rgba(0, 0, 0, 0.22);
+}
+
+.who-are-we-cta-button:hover span {
+    transform: translateX(4px);
+}
+
+
 /* MOBILE */
 
 @media (max-width: 600px) {
@@ -904,6 +965,33 @@ loadFacebookFeed();
 
 </section>
     
+
+<!-- WHO ARE WE CTA -->
+<section class="who-are-we-cta">
+
+    <div class="who-are-we-cta-content">
+
+        <h2>Curious who's behind it all?</h2>
+
+        <p>
+            Meet the two humans who somehow ended up working for the cats.
+        </p>
+
+        <a
+            href="who-are-we.html"
+            class="who-are-we-cta-button"
+            onclick="gtag('event', 'who_are_we_click', {
+                'link_location': 'homepage'
+            });">
+
+            MEET THE HOOMANS &amp; <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
     <footer>
         © 2026 Dingli Stray Cats<br>
     <a href="https://www.sandroazzopardi.com" target="_blank" rel="noopener noreferrer">
@@ -912,4 +1000,3 @@ loadFacebookFeed();
     </footer>
 
 </body>
-</html>
