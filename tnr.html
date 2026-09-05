@@ -1,1 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBVDYR5Q0G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-JBVDYR5Q0G');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TNR | Trap, Neuter, Return</title>
+    <meta name="description" content=" Learn about Trap-Neuter-Return (TNR), a humane approach to managing stray and feral cat colonies in Malta. Understand how TNR works and why neutering helps reduce the number of unwanted kittens.">
+    <meta name="keywords" content=" TNR Malta, Trap Neuter Return Malta, stray cats Malta, feral cats Malta, cat neutering Malta, Dingli stray cats, stray cat colonies ">
+    <meta name="author" content="Dingli Stray Cats">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/JPG" href="DingliCats_FAV.JPG">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { min-height: 100%; }
+        body { font-family: 'Poppins', sans-serif; background:#f5f5f5; color:#333; }
+
+        .top-help { width:100%; max-width:1800px; margin:0 auto 15px; background:#B71819; color:white; border-radius:0 0 10px 10px; overflow:hidden; position:sticky; top:0; z-index:1000; }
+        .top-help-header { display:flex; align-items:center; justify-content:center; min-height:28px; padding:5px 10px; cursor:pointer; user-select:none; font-size:18px; font-weight:600; }
+        .top-help-title { display:flex; align-items:center; justify-content:center; gap:10px; }
+        .help-chevron { width:9px; height:9px; border-right:2px solid white; border-bottom:2px solid white; transform:rotate(45deg); margin-top:-5px; }
+        .top-help-content { max-height:0; overflow:hidden; background:#FCE8E8; color:#333; transition:max-height .4s ease; }
+        .top-help-inner { max-width:650px; margin:0 auto; padding:0 25px 12px; }
+        .top-help-option { padding:10px 0; border-top:1px solid rgba(183,24,25,.12); }
+        .top-help-option-title { color:#B71819; font-size:17px; font-weight:700; margin-bottom:3px; }
+        .top-help-option-text { font-size:15px; line-height:1.5; color:#555; }
+        .top-help.open .top-help-content { max-height:700px; }
+
+        .top-section { position:relative; width:100%; max-width:1800px; text-align:center; }
+        .facebook-icon, .email-icon { position:absolute; right:15px; display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; text-decoration:none; z-index:10; transition:transform .2s ease; }
+        .facebook-icon { top:55px; }
+        .email-icon { top:105px; }
+        .facebook-icon svg, .email-icon svg { display:block; width:40px; height:40px; }
+        .facebook-icon svg { fill:#1877F2; }
+        .email-icon svg { fill:#555; }
+        .facebook-icon:hover, .email-icon:hover { transform:translateY(-2px); }
+        .logo { width:220px; max-width:70%; height:auto; margin:10px 0 5px; }
+
+        main { width:100%; max-width:1800px; margin:0 auto; padding:10px 20px 70px; }
+        .page-intro { max-width:950px; margin:0 auto 25px; text-align:center; background:white; border-radius:12px; padding:25px 25px 28px; box-shadow:0 6px 20px rgba(0,0,0,.12); }
+        .page-intro h1 { color:#B71819; font-size:34px; line-height:1.25; margin-bottom:12px; }
+        .page-intro p { color:#555; font-size:18px; line-height:1.6; }
+
+        .tnr-panel { max-width:950px; margin:0 auto 25px; background:#B71819; color:white; border-radius:12px; padding:30px 25px; text-align:center; box-shadow:0 8px 25px rgba(0,0,0,.18); }
+        .tnr-panel h2 { font-size:25px; margin-bottom:6px; }
+        .tnr-panel p { font-size:16px; line-height:1.5; }
+
+        .content-grid { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+        .info-card { background:white; border-radius:12px; padding:25px; box-shadow:0 6px 20px rgba(0,0,0,.10); }
+        .info-card.full-width { grid-column:1/-1; }
+        .info-card h2 { color:#B71819; font-size:24px; line-height:1.3; margin-bottom:12px; }
+        .info-card p { color:#555; font-size:16px; line-height:1.65; margin-bottom:10px; }
+        .info-card ul { padding-left:22px; color:#555; }
+        .info-card li { font-size:16px; line-height:1.6; margin-bottom:7px; }
+
+        .hours-box { background:#EEF4FA; border-radius:10px; padding:18px 20px; margin-top:12px; }
+        .fees-card { border:3px solid #B71819; }
+        .fees-warning { background:#FCE8E8; border-radius:10px; padding:18px 20px; margin:12px 0 18px; }
+        .fees-warning strong { color:#B71819; }
+        .upfront { font-size:19px !important; font-weight:700; color:#B71819 !important; }
+        .reimbursement { background:#f5f5f5; border-left:5px solid #73A6E0; padding:16px 18px; border-radius:0 8px 8px 0; margin-top:15px; }
+        .important-note { background:#fff8e6; border-left:5px solid #B71819; padding:16px 18px; border-radius:0 8px 8px 0; margin-top:15px; }
+        .official-link { display:inline-block; margin-top:8px; color:#1877F2; font-weight:600; text-decoration:none; }
+        .official-link:hover { text-decoration:underline; }
+        .last-updated { max-width:1100px; margin:25px auto 0; text-align:center; font-size:13px; color:#888; }
+
+        footer { text-align:center; padding:25px 20px; font-size:14px; color:#888; }
+        footer a, footer a:hover, footer a:visited { color:#888; }
+
+        /* =========================
+   BACK TO HOME BUTTON
+   ========================= */
+
+.back-home-button {
+    display: flex;
+    width: fit-content;
+    margin: 25px auto 0;
+    align-items: center;
+    gap: 10px;
+    background: #B71819;
+    color: #ffffff;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.back-home-button span {
+    font-size: 21px;
+    line-height: 1;
+    transition: transform 0.2s ease;
+}
+
+.back-home-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+}
+
+.back-home-button:hover span {
+    transform: translateX(-4px);
+}
+        
+        @media (max-width:700px) {
+            .top-help-header { min-height:36px; font-size:16px; }
+            .top-help-inner { padding:5px 18px 20px; }
+            .top-help-option-text { font-size:14px; }
+            .logo { width:180px; }
+            main { padding:10px 15px 55px; }
+            .page-intro { padding:22px 18px 24px; }
+            .page-intro h1 { font-size:27px; }
+            .page-intro p { font-size:16px; }
+            .tnr-panel { padding:25px 18px; }
+            .tnr-panel h2 { font-size:22px; }
+            .tnr-panel p { font-size:15px; }
+            .content-grid { grid-template-columns:1fr; gap:15px; }
+            .info-card.full-width { grid-column:auto; }
+            .info-card { padding:20px 18px; }
+            .info-card h2 { font-size:22px; }
+            .info-card p, .info-card li { font-size:15px; }
+            .facebook-icon { top:50px; right:10px; }
+            .email-icon { top:98px; right:10px; }
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div class="top-section">
+        <div class="top-help" id="topHelp">
+            <div class="top-help-header" onclick="toggleTopHelp()">
+                <div class="top-help-title">
+                    <span class="help-chevron"></span>
+                    <span>DONATE & HELP OUR CATS</span>
+                    <span class="help-chevron"></span>
+                </div>
+            </div>
+            <div class="top-help-content">
+                <div class="top-help-inner">
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">Even a small contribution can make a big difference</div>
+                        <div class="top-help-option-text">
+                            Your donation helps provide food, and other essential & veterinary care for stray and feral cats.
+                            <br><br>
+                            <strong>Revolut:</strong> +356 7925 3603<br>
+                            <strong>BOV Pay:</strong> +356 7925 3603
+                        </div>
+                    </div>
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">BCRS BOTTLES</div>
+                        <div class="top-help-option-text">Donate your eligible BCRS bottles and cans. The proceeds help us provide food and care. Please get in touch so we can arrange pick-up.</div>
+                    </div>
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">CAT FOOD</div>
+                        <div class="top-help-option-text">You can also support our colonies by donating cat food (dry & wet). Please get in touch so we can arrange pick-up.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://www.facebook.com/dinglistraycats" target="_blank" rel="noopener noreferrer" class="facebook-icon" aria-label="Dingli Stray Cats on Facebook" onclick="gtag('event','facebook_click',{link_location:'top_icon'});">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.007 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.313 0 2.686.236 2.686.236v2.971h-1.515c-1.491 0-1.956.928-1.956 1.881v2.26h3.328l-.532 3.495h-2.796V24C19.612 23.08 24 18.092 24 12.073z"/></svg>
+        </a>
+
+        <a href="mailto:domenicastraycatsdingli@gmail.com" class="email-icon" aria-label="Email Dingli Stray Cats">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+
+        <img src="Dingli Stray Cats Logo New Badge.png" alt="Dingli Stray Cats" class="logo">
+    </div>
+
+    <section class="page-intro">
+        <h1> TNR | Trap, Neuter, Return </h1>
+        <p> A humane and practical approach to managing stray and feral cat colonies,
+        while helping to reduce the number of kittens born into an uncertain future.</p>
+    </section>
+
+    <section class="tnr-panel">
+        <h2>What is TNR?</h2>
+        <p> Trap-Neuter-Return, commonly known as <strong>TNR</strong>, is a humane
+        approach to managing stray and feral cat populations.</p>
+    <p>
+        Instead of continually removing cats from an area, TNR focuses on
+        preventing more kittens from being born while allowing existing cats
+        to remain in the territory they know.
+    </p>
+
+    <p>
+        When carried out responsibly and as an ongoing process, TNR can help
+        create healthier and more stable cat colonies over time.
+    </p>
+
+    </section>
+
+    <div class="content-grid">
+        <section class="info-card">
+            <h2>The Three Steps of TNR</h2>
+            <p> <strong>STEP 1</strong>
+Cats are safely and humanely caught using suitable live traps.
+                The aim is to minimise stress and ensure that the cat can be taken for veterinary treatment safely.</p>
+<p> <strong>STEP 2</strong>
+ The cat is taken to a veterinarian for sterilisation.
+ Neutering prevents the cat from producing more kittens and can reduce behaviours associated with breeding.
+</p>
+<p> <strong>STEP 3</strong>
+Once the cat has recovered sufficiently, it is returned to the same area where it was trapped — the territory it knows.
+</p>
+        </section>
+
+        <section class="info-card">
+            <h2>Why does TNR Matter?</h2>
+<p>
+        Stray cats can reproduce very quickly. Without neutering, one colony
+        can continue producing kittens year after year.
+    </p>
+
+    <p>
+        TNR tackles the problem at its source: <strong>the number of kittens
+        being born.</strong>
+    </p>
+
+    <p>
+        As more cats within a colony are neutered, fewer kittens are born.
+        Over time, this can help colonies become smaller and more stable.
+    </p>
+   <p>
+            <strong>TNR is not about removing every cat.</strong>
+        </p>
+
+        <p>
+            It is about reducing future population growth while continuing
+            to care for the cats already living in the community.
+        </p>
+
+        </section>
+
+        <section class="info-card">
+    <h2>What Can Neutering Help With?</h2>
+
+                <p>
+        Neutering does more than prevent unwanted litters. It can also reduce
+        behaviours commonly associated with breeding.
+    </p>
+
+    <ul>
+
+        <li>Fewer unwanted kittens</li>
+
+        <li>Less roaming in search of mates</li>
+
+        <li>Reduced mating behaviour</li>
+
+        <li>Less fighting between cats</li>
+
+        <li>Reduced territorial spraying</li>
+
+        <li>More stable cat colonies</li>
+
+    </ul>
+
+    <p>
+        The exact effects vary between individual cats, and neutering is only one part of responsible colony management.
+    </p>
+
+        </section>
+
+        <section class="info-card">
+            <h2>Why Return the Cat?</h2>
+    <p>
+        A common question is:
+    </p>
+
+    <div class="highlight">
+
+        <p>
+            <strong>"Why not just remove the cat?"</strong>
+        </p>
+
+    </div>
+
+    <p>
+        Many feral and unsocialised cats are strongly attached to the territory
+        they know. They are familiar with the surrounding area, available food
+        sources, shelter and other cats in their colony.
+    </p>
+
+    <p>
+        Returning a cat to its original territory after recovery allows it
+        to remain in the environment it knows.
+    </p>
+
+    <p>
+        Simply moving a cat to an unfamiliar location can put it at risk.
+        It may attempt to find its way back, become lost, encounter traffic,
+        or struggle to find food and shelter.
+    </p>
+
+    <p>
+        For this reason, responsible TNR returns the cat to the place where
+        it was originally trapped.
+    </p>
+    </section>
+
+        <section class="info-card">
+    <h2>How Can You Tell If a Cat Has Been Neutered?</h2>
+
+    <p>
+        One of the easiest ways to identify a cat that has already been
+        sterilised is by looking at its ear.
+    </p>
+
+    <p>
+        A small <strong>ear-tip</strong> is commonly used as a permanent
+        visual indication that an outdoor cat has already been neutered.
+    </p>
+
+    <p>
+        This allows feeders, rescuers and other people caring for stray cats
+        to recognise the cat and avoid putting it through the unnecessary
+        stress of being trapped again.
+    </p>
+
+    <div class="highlight">
+
+        <p>
+            <strong>See an ear-tipped cat?</strong>
+        </p>
+
+        <p>
+            It is generally an indication that the cat has already been sterilised as part of a TNR programme.
+        </p>
+
+    </div>
+
+</section>
+
+
+        <section class="info-card full-width">
+            <h2>TNR is an Ongoing Process</h2>
+    <p>
+        TNR is not an overnight solution.
+    </p>
+
+    <p>
+        A colony may still contain kittens, unneutered cats or new cats arriving from elsewhere. This is why TNR works best as an ongoing process rather than a one-time intervention.
+    </p>
+
+    <div class="cycle">
+
+        <span>Trap</span>
+        <span class="arrow">→</span>
+        <span>Neuter</span>
+        <span class="arrow">→</span>
+        <span>Return</span>
+        <span class="arrow">→</span>
+        <span>Monitor</span>
+        <span class="arrow">→</span>
+        <span>Repeat</span>
+
+    </div>
+
+    <p>
+        As new cats appear, they can be identified and, where appropriate,
+        included in the TNR effort.
+    </p>
+
+    <p>
+        Combined with regular feeding, access to water, shelter and veterinary
+        care, this can help create a healthier and more stable colony.
+    </p>
+        </section>
+
+        <section class="info-card full-width">
+            <h2> What If You Know of a Stray Cat Colony?</h2>
+    <p>
+        If you regularly see a group of stray or feral cats and suspect that
+        some of them are not neutered, keeping track of the colony can be
+        extremely useful.
+    </p>
+
+    <p>Take note of:</p>
+
+    <ul>
+
+        <li>How many cats are present</li>
+
+        <li>Which cats appear to be neutered</li>
+
+        <li>Whether any cats have an ear-tip</li>
+
+        <li>Whether kittens are appearing</li>
+
+        <li>Whether new cats are joining the colony</li>
+
+        <li>Whether any cats appear injured or unwell</li>
+
+    </ul>
+
+    <p>
+        Good information makes it easier to understand what is happening
+        within the colony and decide what action may be needed.
+    </p>
+        </section>
+
+        <section class="info-card full-width">
+            <h2> TNR and Dingli Stray Cats </h2>
+    <p>
+        At Dingli Stray Cats, we believe that caring for stray cats means
+        looking beyond the cats we see today.
+    </p>
+
+    <p>
+        The goal is not simply to feed more cats. It is to help create
+        healthier, more stable colonies and reduce the number of kittens
+        born into an uncertain future.
+    </p>
+
+    <p>
+        TNR is an important part of that approach.
+    </p>
+
+    <div class="highlight">
+
+        <p>
+            <strong>Every cat that is successfully neutered means fewer
+            unwanted litters in the future.</strong>
+        </p>
+
+    </div>
+
+    <p>
+        When combined with regular care, feeding, monitoring and veterinary
+        attention, TNR can make a lasting difference to the cats living
+        in our communities.
+    </p>
+
+        </section>
+
+
+    </div>
+
+       <a
+            href="https://dinglistraycats.org"
+            class="back-home-button"
+            aria-label="Back to Dingli Stray Cats homepage"
+            onclick="gtag('event', 'home_click', {
+                'link_location': 'tnr'
+            });">
+            <span>←</span> BACK TO HOME
+        </a>
+
+    </main>
+
+<footer>
+    © 2026 Dingli Stray Cats<br>
+    <a href="https://www.sandroazzopardi.com" target="_blank" rel="noopener noreferrer">www.sandroazzopardi.com</a>
+</footer>
+
+<script>
+function toggleTopHelp() {
+    document.getElementById('topHelp').classList.toggle('open');
+}
+</script>
+</body>
+</html>
 
