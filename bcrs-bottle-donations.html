@@ -344,6 +344,47 @@
             opacity: 0.85;
         }
 
+          /* =========================
+           BACK TO HOME BUTTON
+           ========================= */
+
+        .back-home-button {
+            display: flex;
+            width: fit-content;
+            align-items: center;
+            gap: 10px;
+            background: #B71819;
+            color: #ffffff;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            margin: 30px auto 0;
+        }
+
+        .back-home-button span {
+            font-size: 21px;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .back-home-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        .back-home-button:hover span {
+            transform: translateX(-4px);
+        }
+
+        /* =========================
+           BACK TO HOME BUTTON END
+           ========================= */
+
+        
         footer {
             text-align: center;
             padding: 25px 20px;
@@ -554,7 +595,19 @@
                 <a href="mailto:domenicastraycatsdingli@gmail.com" class="bcrs-button">EMAIL US</a>
             </div>
             <p class="bcrs-note">Not sure which containers are eligible? Check the <a href="https://bcrsmalta.mt/" target="_blank" rel="noopener noreferrer">official BCRS Malta website</a>.</p>
-            <p class="bcrs-home"><a href="/">← Back to Dingli Stray Cats homepage</a></p>
+
+             <!-- BACK TO HOME -->
+
+    <a
+        href="https://dinglistraycats.org"
+        class="back-home-button"
+        aria-label="Back to Dingli Stray Cats homepage"
+        onclick="gtag('event','home_click',{link_location:'pet_information_page'});">
+
+        <span>←</span> BACK TO HOME
+
+    </a>
+            
         </section>
     </main>
 
