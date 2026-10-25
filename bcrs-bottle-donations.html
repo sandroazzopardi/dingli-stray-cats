@@ -178,6 +178,26 @@ body{background:#f5f5f5;color:#333333}
 .footer a{color:#888888!important}
 .home-link{color:#B71819}
 @media(max-width:600px){.hero{padding:22px 20px 32px}.hero h1{font-size:26px}.hero .lead{font-size:17px}.section{padding:36px 20px}.home-header .logo{width:180px}}
+
+/* Consistent homepage layout: centred card, same red banner, white sections */
+body{display:flex;flex-direction:column;min-height:100vh}
+.home-header{width:100%;max-width:1800px;margin:0 auto}
+main{width:100%;max-width:1800px;margin:0 auto;text-align:center;flex:1}
+.hero{background:#f5f5f5;padding:18px 20px 28px}
+.hero .wrap{max-width:650px;background:white;padding:25px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.12)}
+.hero h1{color:#73A6E0;font-size:clamp(22px,3vw,30px)}
+.hero .lead{font-size:17px}
+.section{padding:38px 20px;background:white}
+.section.tint{background:#f5f5f5}
+.section .wrap{max-width:900px;margin:auto}
+.section p{margin:12px auto;line-height:1.65}
+.section h2{margin-bottom:12px}
+.grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.card{background:white}
+.callout{margin:24px auto}
+.bcrs-photo{display:block;max-width:min(250px,80%);margin:0 auto 20px}
+.footer .wrap{display:block;text-align:center}
+@media(max-width:680px){.grid{grid-template-columns:1fr}.hero{padding:15px 15px 25px}.section{padding:30px 18px}}
 </style>
 </head>
 <body>
