@@ -690,7 +690,7 @@
    ========================= */
 
 .pet-info-cta {
-    background: #B71819;
+    background: #ffffff;
     width: 100%;
     max-width: 1800px;
     margin: 0 auto;
@@ -705,14 +705,14 @@
 }
 
 .pet-info-cta h2 {
-    color: #ffffff;
+    color: #333333;
     font-size: 30px;
     font-weight: 700;
     margin: 0 0 10px;
 }
 
 .pet-info-cta p {
-    color: #ffffff;
+    color: #666666;
     font-size: 17px;
     line-height: 1.6;
     margin: 0 0 25px;
@@ -722,8 +722,8 @@
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: #ffffff;
-    color: #B71819;
+    background: #B71819;
+    color: #ffffff;
     padding: 15px 28px;
     border-radius: 30px;
     font-size: 16px;
@@ -828,6 +828,15 @@
 
 }
      
+
+/* CATS THROUGH MALTESE HISTORY CTA */
+.history-cta {background:#B71819;width:100%;max-width:1800px;margin:0 auto;padding:38px 20px 42px;text-align:center;}
+.history-cta-content {max-width:900px;margin:0 auto;}
+.history-cta h2 {color:#fff;font-size:28px;font-weight:700;margin:0 0 10px;}
+.history-cta p {color:#fff;font-size:16px;line-height:1.6;margin:0 0 22px;}
+.history-cta-button {display:inline-flex;align-items:center;gap:10px;background:#fff;color:#B71819;padding:13px 24px;border-radius:30px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.16);transition:transform .2s ease,box-shadow .2s ease;}
+.history-cta-button:hover {transform:translateY(-3px);box-shadow:0 7px 18px rgba(0,0,0,.23);}
+@media(max-width:600px){.history-cta{padding:34px 20px 40px}.history-cta h2{font-size:25px}}
 </style>
 
         
@@ -964,6 +973,17 @@ loadFacebookFeed();
 
 </section>
     
+
+<!-- CATS THROUGH MALTESE HISTORY CTA -->
+<section class="history-cta" aria-labelledby="history-title">
+    <div class="history-cta-content">
+        <h2 id="history-title">Cats Through Maltese History</h2>
+        <p>Discover the fascinating story of cats in Malta through historical artwork, folklore, documents and landmarks. Explore our interactive timeline.</p>
+        <a href="cats-through-maltese-history.html" class="history-cta-button" onclick="if(typeof gtag === 'function') gtag('event','cats_history_click',{'link_location':'homepage'});">
+            EXPLORE THE TIMELINE <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
 
 <!-- WHO ARE WE CTA -->
 <section class="who-are-we-cta">
