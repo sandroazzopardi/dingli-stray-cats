@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBVDYR5Q0G"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JBVDYR5Q0G');
+</script>
+	
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats Through Maltese History | Dingli Stray Cats</title>
+    <meta name="description" content="Explore cats through Maltese history: archaeology, folklore, historic records, art and monuments in Malta and Gozo.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/JPG" href="DingliCats_FAV.JPG">
+
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body { min-height: 100%; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #f5f5f5;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main {
+            flex: 1;
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 10px 20px 80px;
+        }
+
+        .top-section {
+            position: relative;
+            width: 100%;
+            max-width: 1800px;
+            text-align: center;
+        }
+
+        /* =========================
+           TOP HELP PANEL
+           ========================= */
+
+        .top-help {
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto 15px;
+            background: #B71819;
+            color: white;
+            border-radius: 0 0 10px 10px;
+            overflow: hidden;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .top-help-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 28px;
+            padding: 5px 10px;
+            cursor: pointer;
+            user-select: none;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .top-help-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .help-chevron {
+            width: 9px;
+            height: 9px;
+            border-right: 2px solid white;
+            border-bottom: 2px solid white;
+            transform: rotate(45deg);
+            margin-top: -5px;
+        }
+
+        .top-help-content {
+            max-height: 0;
+            overflow: hidden;
+            background: #FCE8E8;
+            color: #333333;
+            transition: max-height 0.4s ease;
+        }
+
+        .top-help-inner {
+            max-width: 650px;
+            margin: 0 auto;
+            padding: 0 25px 12px;
+        }
+
+        .top-help-option {
+            padding: 10px 0;
+            border-top: 1px solid rgba(183, 24, 25, 0.12);
+        }
+
+        .top-help-option-title {
+            color: #B71819;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .top-help-option-text {
+            font-size: 15px;
+            line-height: 1.5;
+            color: #555555;
+        }
+
+        .top-help-option-with-image {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-help-option-with-image img {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            border-radius: 8px;
+            flex-shrink: 0;
+            background: white;
+        }
+
+        .top-help.open .top-help-content { max-height: 700px; }
+
+        .top-help.open .help-chevron {
+            transform: rotate(225deg);
+            margin-top: 5px;
+        }
+
+        /* =========================
+           HEADER
+           ========================= */
+
+        .facebook-icon,
+        .email-icon {
+            position: absolute;
+            right: 15px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            text-decoration: none;
+            z-index: 10;
+            transition: transform 0.2s ease;
+        }
+
+        .facebook-icon { top: 55px; }
+        .email-icon { top: 105px; }
+
+        .facebook-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #1877F2;
+        }
+
+        .email-icon svg {
+            width: 40px;
+            height: 40px;
+            fill: #555555;
+        }
+
+        .facebook-icon:hover,
+        .email-icon:hover {
+            transform: translateY(-2px);
+        }
+
+        .logo {
+            width: 220px;
+            max-width: 70%;
+            height: auto;
+            margin: 5px 0 5px;
+        }
+
+        /* =========================
+           WHO ARE WE
+           ========================= */
+
+        .who-section {
+            width: 100%;
+            max-width: 1050px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .who-title {
+            color: #B71819;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .who-subtitle {
+            color: #73A6E0;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .people-card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            overflow: hidden;
+            margin-bottom: 28px;
+        }
+
+        .people-photo {
+            width: 100%;
+            max-height: 560px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .people-caption {
+            padding: 22px 25px 25px;
+        }
+
+        .people-caption h2 {
+            color: #B71819;
+            font-size: 27px;
+            margin-bottom: 4px;
+        }
+
+        .people-caption p {
+            color: #777777;
+            font-size: 15px;
+        }
+
+        .who-text {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+            padding: 30px 35px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .who-text h2 {
+            color: #B71819;
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .who-text p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444444;
+            margin-bottom: 14px;
+        }
+
+        .who-text p:last-child { margin-bottom: 0; }
+
+        .helpers-banner {
+            background: #B71819;
+            color: #ffffff;
+            border-radius: 10px;
+            padding: 28px 30px;
+            margin-bottom: 28px;
+        }
+
+        .helpers-banner h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .helpers-banner p {
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* =========================
+           VOLUNTEER CTA
+           ========================= */
+
+        .volunteer-cta {
+            background: #B71819;
+            width: 100%;
+            max-width: 1800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .volunteer-cta-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .volunteer-cta h2 {
+            color: #ffffff;
+            font-size: 32px;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+
+        .volunteer-cta p {
+            color: #ffffff;
+            font-size: 17px;
+            margin: 0 0 28px;
+        }
+
+        .volunteer-cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #ffffff;
+            color: #B71819;
+            padding: 15px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .volunteer-cta-button span {
+            font-size: 21px;
+            line-height: 1;
+            transition: transform 0.2s ease;
+        }
+
+        .volunteer-cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        .volunteer-cta-button:hover span { transform: translateX(4px); }
+
+        .our-mission {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+            padding: 30px 35px;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        .our-mission h2 {
+            color: #B71819;
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .our-mission p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #444444;
+            margin-bottom: 14px;
+        }
+
+        .our-mission p:last-child { margin-bottom: 0; }
+
+        footer {
+            text-align: center;
+            padding: 25px 20px;
+            font-size: 14px;
+            color: #888888;
+        }
+
+        footer a,
+        footer a:hover,
+        footer a:visited {
+            color: #888888;
+        }
+
+        @media (max-width: 600px) {
+            main { padding: 10px 15px 55px; }
+
+            .top-help-header {
+                min-height: 36px;
+                font-size: 16px;
+            }
+
+            .top-help-inner { padding: 5px 18px 20px; }
+
+            .top-help-option-text { font-size: 14px; }
+
+            .top-help-option-with-image img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .logo {
+                width: 180px;
+                margin-bottom: 10px;
+            }
+
+            .facebook-icon,
+            .email-icon {
+                transform: scale(0.9);
+                transform-origin: top right;
+            }
+
+            .who-title { font-size: 29px; }
+
+            .who-subtitle {
+                font-size: 17px;
+                margin-bottom: 22px;
+            }
+
+            .people-caption h2 { font-size: 23px; }
+
+            .who-text {
+                padding: 24px 20px;
+            }
+
+            .who-text h2 { font-size: 22px; }
+
+            .who-text p {
+                font-size: 16px;
+                line-height: 1.65;
+            }
+
+            .helpers-banner {
+                padding: 25px 20px;
+            }
+
+            .helpers-banner h2 { font-size: 23px; }
+
+            .helpers-banner p { font-size: 16px; }
+
+            .volunteer-cta { padding: 45px 20px; }
+
+            .volunteer-cta h2 { font-size: 26px; }
+
+            .volunteer-cta p { font-size: 16px; }
+        }
+
+/* CATS THROUGH MALTESE HISTORY — page-specific styles */
+.history-section{max-width:1150px;margin:0 auto;text-align:center}
+.history-title{color:#B71819;font-size:36px;font-weight:700;margin-bottom:8px}
+.history-subtitle{color:#73A6E0;font-size:20px;font-weight:500;margin-bottom:20px}
+.history-intro{background:#fff;border-radius:12px;padding:24px 30px;line-height:1.7;text-align:left;box-shadow:0 6px 20px #00000012;margin-bottom:24px}
+.timeline-controls{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 0 12px;flex-wrap:wrap}
+.timeline-controls button,.modal-nav button{background:#B71819;color:#fff;border:0;border-radius:8px;padding:10px 16px;font:600 15px Poppins,sans-serif;cursor:pointer}
+.timeline-controls button:disabled,.modal-nav button:disabled{opacity:.35;cursor:default}
+.timeline-hint{color:#666;font-size:14px}
+.timeline-viewport{background:#fff;border-radius:12px;box-shadow:0 6px 20px #00000015;overflow-x:auto;scroll-behavior:smooth;padding:35px 12px 25px;scrollbar-color:#73A6E0 #eee}
+.timeline-track{display:flex;align-items:stretch;width:max-content;min-width:100%;position:relative;padding:8px 24px 0}
+.timeline-track:before{content:"";position:absolute;left:70px;right:70px;top:54px;height:5px;background:#73A6E0;border-radius:10px}
+.timeline-event{position:relative;flex:0 0 170px;min-height:174px;border:0;background:none;color:#333;cursor:pointer;text-align:center;font-family:inherit;padding:0 12px;display:flex;align-items:center;flex-direction:column}
+.timeline-event .date{font-size:15px;font-weight:700;color:#B71819;height:34px}
+.timeline-event .dot{height:29px;width:29px;border:5px solid #B71819;background:#fff;border-radius:50%;z-index:1;margin:0 0 16px;transition:transform .2s}
+.timeline-event:hover .dot,.timeline-event:focus-visible .dot{transform:scale(1.25);background:#B71819}
+.timeline-event .event-name{font-size:14px;font-weight:600;line-height:1.35}
+.timeline-event .event-type{font-size:12px;color:#777;margin-top:6px}
+.timeline-event:focus-visible{outline:3px solid #73A6E0;outline-offset:2px;border-radius:6px}
+.history-note{font-size:13px;color:#777;text-align:left;margin:16px 0 25px;line-height:1.6}
+.history-modal[hidden]{display:none}
+.history-modal{position:fixed;inset:0;background:#0009;z-index:2500;display:flex;align-items:center;justify-content:center;padding:18px}
+.history-dialog{background:#fff;width:min(620px,100%);max-height:90vh;overflow:auto;border-radius:14px;box-shadow:0 15px 50px #0005;text-align:left;position:relative;padding:28px}
+.modal-close{position:absolute;right:14px;top:10px;background:transparent;border:0;font-size:30px;cursor:pointer;color:#666}
+.modal-date{font-size:15px;color:#73A6E0;font-weight:700;margin:0 36px 8px 0}
+.history-dialog h2{color:#B71819;font-size:26px;line-height:1.3;margin:0 36px 12px 0}
+.modal-image-placeholder{height:185px;border-radius:10px;background:#f1f4f8;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;color:#637489;font-size:14px;margin:16px 0}
+.modal-description{font-size:16px;line-height:1.7;color:#444}
+.modal-tag{display:inline-block;background:#fce8e8;color:#B71819;border-radius:20px;padding:5px 10px;font-size:12px;font-weight:600;margin:14px 0}
+.modal-source{font-size:14px;line-height:1.5;overflow-wrap:anywhere}
+.modal-source a{color:#B71819;font-weight:600}
+.modal-nav{display:flex;justify-content:space-between;margin-top:22px;gap:10px}
+@media(max-width:600px){.history-title{font-size:29px}.history-subtitle{font-size:17px}.history-intro{padding:20px;font-size:15px}.timeline-event{flex-basis:145px}.history-dialog{padding:22px}.history-dialog h2{font-size:22px}}
+
+    .history-photo{margin:16px 0}.history-photo img{width:100%;height:auto;max-height:340px;object-fit:contain;object-position:center;border-radius:10px;display:block;background:#f1f4f8;margin-inline:auto}.history-photo figcaption{font-size:12px;color:#697584;line-height:1.5;margin-top:6px}.timeline-event:focus-visible{outline:3px solid #73A6E0;outline-offset:4px}
+    </style>
+</head>
+
+<body>
+
+<main>
+    <div class="top-section">
+
+        <!-- TOP HELP PANEL -->
+        <div class="top-help" id="topHelp">
+            <div class="top-help-header" onclick="toggleTopHelp()">
+                <div class="top-help-title">
+                    <span class="help-chevron"></span>
+                    <span>DONATE &amp; HELP OUR CATS</span>
+                    <span class="help-chevron"></span>
+                </div>
+            </div>
+
+            <div class="top-help-content">
+                <div class="top-help-inner">
+
+                    <div class="top-help-option">
+                        <div class="top-help-option-title">
+                            Even a small contribution can make a big difference
+                        </div>
+                        <div class="top-help-option-text">
+                            Your donation helps provide food, and other essential &amp; veterinary care for stray and feral cats.
+                            <br><strong>Revolut:</strong> +356 7925 3603
+                            <br><strong>BOV Pay:</strong> +356 7925 3603
+                        </div>
+                    </div>
+
+                    <div class="top-help-option top-help-option-with-image">
+                        <img src="bcrs-bottles-standing.jpg" alt="BCRS bottle donations supporting stray cats in Malta">
+                        <div>
+                            <div class="top-help-option-title">BCRS BOTTLES</div>
+                        <div class="top-help-option-text">
+                        Donate your eligible BCRS bottles and cans. The proceeds help us provide food and care.
+                        Please get in touch so we can arrange pick-up.<br>
+                        <a href="bcrs-bottle-donations.html" style="display:inline-block;margin-top:7px;color:#B71819;font-weight:700;" onclick="gtag('event','bcrs_page_click',{'link_location':'homepage_help_panel'});">Learn how to donate BCRS bottles →</a>
+                	    </div>
+
+                        </div>
+                    </div>
+
+                    <div class="top-help-option top-help-option-with-image">
+                        <img src="cat-food-transparent.PNG" alt="Cat food donated for stray cats in Malta">
+                        <div>
+                            <div class="top-help-option-title">CAT FOOD</div>
+                            <div class="top-help-option-text">
+                                You can also support our colonies by donating cat food (dry &amp; wet).
+                                Please get in touch so we can arrange pick-up.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- FACEBOOK -->
+        <a href="https://www.facebook.com/dinglistraycats"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="facebook-icon"
+           aria-label="Dingli Stray Cats on Facebook"
+           onclick="gtag('event', 'facebook_click', {'link_location': 'top_icon'});">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.007 10.125 11.927v-8.432H7.078v-3.495h3.047V9.413c0-3.017 1.792-4.689 4.533-4.689 1.313 0 2.686.236 2.686.236v2.971h-1.515c-1.491 0-1.956.928-1.956 1.881v2.26h3.328l-.532 3.495h-2.796V24C19.612 23.08 24 18.092 24 12.073z"/>
+            </svg>
+        </a>
+
+        <!-- EMAIL -->
+        <a href="mailto:domenicastraycatsdingli@gmail.com"
+           class="email-icon"
+           aria-label="Email Dingli Stray Cats">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+        </a>
+
+        <!-- SAME LOGO -->
+       <a href="/" aria-label="Go to Dingli Stray Cats homepage">
+    <img src="Dingli Stray Cats Logo New Badge.png"
+         alt="Dingli Stray Cats – stray and feral cat welfare in Malta"
+         class="logo">
+    </a>
+    </div>
+
+    <!-- CATS THROUGH MALTESE HISTORY -->
+    <section class="history-section">
+      <h1 class="history-title">Cats Through Maltese History</h1>
+      <p class="history-subtitle">Discover the cats, stories and traditions woven into Malta’s past.</p>
+      <div class="history-intro">Explore the historical relationship between cats and the Maltese Islands, from early archaeological discoveries to folklore, artworks and modern monuments. Select any date to open its story. This is a developing research collection: entries marked as research leads require further verification before being treated as established history.</div>
+      <div class="timeline-controls"><button id="scrollBack" type="button" aria-label="Scroll timeline left">&#8592; Earlier</button><span class="timeline-hint">Scroll or swipe sideways · Select a date</span><button id="scrollForward" type="button" aria-label="Scroll timeline right">Later &#8594;</button></div>
+      <div class="timeline-viewport" id="timelineViewport" tabindex="0" aria-label="Horizontal historical timeline"><div class="timeline-track" id="timelineTrack"></div></div>
+      <p class="history-note">All timeline images are stored locally. Some are authentic period artworks or original subject photographs; others are explicitly labelled contextual images. Open source links for attribution and licensing information.</p>
+    </section>
+    <div class="history-modal" id="historyModal" hidden>
+      <div class="history-dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="Close story">&times;</button>
+        <p class="modal-date" id="modalDate"></p><h2 id="modalTitle"></h2>
+        <figure class="history-photo"><img id="modalImage" alt="" loading="lazy"><figcaption id="modalImageCaption"></figcaption><p style="margin:8px 0"><a id="photoSourceLink" target="_blank" rel="noopener noreferrer" hidden>View photograph, attribution and licence</a></p></figure>
+        <p class="modal-description" id="modalDescription"></p><span class="modal-tag" id="modalStatus"></span>
+        <p class="modal-source"><strong>Research source:</strong> <a id="modalSource" target="_blank" rel="noopener noreferrer">View reference</a></p>
+        <div class="modal-nav"><button id="modalPrevious" type="button">&#8592; Previous</button><button id="modalNext" type="button">Next &#8594;</button></div>
+      </div>
+    </div>
+</main>
+
+<!-- SUPPORT OUR CAT WELFARE WORK -->
+<section class="volunteer-cta" aria-labelledby="support-heading">
+    <div class="volunteer-cta-content">
+        <h2 id="support-heading">Help Us Continue Our Project for Cats</h2>
+        <p>Enjoyed exploring Malta’s feline history? Help us care for the cats of Dingli by donating your eligible BCRS bottles and cans. Every contribution supports their food and care.</p>
+        <a href="bcrs-bottle-donations.html"
+           class="volunteer-cta-button"
+           onclick="if(typeof gtag === 'function') gtag('event', 'bcrs_page_click', {'link_location':'history_support_section'});">
+            DONATE BCRS BOTTLES <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</section>
+
+<!-- SAME FOOTER -->
+<footer>
+    © 2026 Dingli Stray Cats<br>
+    <a href="https://www.sandroazzopardi.com" target="_blank" rel="noopener noreferrer">
+        www.sandroazzopardi.com
+    </a>
+</footer>
+
+<script>
+    function toggleTopHelp() {
+        const panel = document.getElementById("topHelp");
+        panel.classList.toggle("open");
+    }
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JBVDYR5Q0G"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JBVDYR5Q0G');
+</script>
+
+<script>
+const historyEvents = [
+  {
+    "id": 0,
+    "period": "Ancient",
+    "date": "Ancient Malta",
+    "title": "Early evidence of cats",
+    "description": "Archaeological studies discuss feline remains in Maltese deposits. Precise identification, dating and whether these were domestic cats require confirmation from excavation reports.",
+    "category": "Archaeology",
+    "status": "Research lead",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "image": "images/history/ancient-malta-tarxien-temples.png",
+    "imageCaption": "Modern photograph of the prehistoric Tarxien Temples. Period context only; not evidence of prehistoric cats at this site.",
+    "imageCredit": "",
+    "imageSource": "",
+    "imageAlt": "Modern photograph of the prehistoric Tarxien Temples. Period context only; not evidence of prehistoric cats at this site.",
+    "imageResearchNote": "Cat remains photograph still not identified. A photograph of unrelated prehistoric human remains must NOT be used."
+  },
+  {
+    "id": 1,
+    "period": "1500s",
+    "date": "16th century",
+    "title": "The Maltese Blue Cat",
+    "description": "Historical literature associates distinctive blue-grey cats with Malta. The exact origin and historical descriptions should be checked against the earliest natural-history sources.",
+    "category": "Historical accounts",
+    "status": "Research lead",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "image": "images/history/maltese-blue-cat-modern.png",
+    "imageCaption": "Modern photograph of a grey cat; illustrative only, not a historical portrait of the Maltese Blue Cat.",
+    "imageCredit": "",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Attentive_grey_stray_cat.jpg",
+    "imageAlt": "Modern photograph of a grey cat; illustrative only, not a historical portrait of the Maltese Blue Cat."
+  },
+  {
+    "id": 2,
+    "period": "1750",
+    "date": "1750",
+    "title": "The mysterious gidmejmun",
+    "description": "A cat-like figure in Maltese folklore is associated with the writings of Agius de Soldanis. The original dictionary entry should be consulted before publishing a definitive description.",
+    "category": "Folklore",
+    "status": "Research lead",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "image": "images/history/de-soldanis-1750.png",
+    "imageCaption": "Photograph of a manuscript attributed to Agius de Soldanis; the displayed page does not document the gidmejmun legend.",
+    "imageCredit": "",
+    "imageSource": "",
+    "imageAlt": "Photograph of a manuscript attributed to Agius de Soldanis; the displayed page does not document the gidmejmun legend.",
+    "imageResearchNote": "Scan of de Soldanis dictionary entry needed; a random cat photograph would misrepresent the legend."
+  },
+  {
+    "id": 3,
+    "period": "1798",
+    "date": "1798–1800",
+    "title": "Cats during the French blockade",
+    "description": "Accounts of food shortages during the blockade of Valletta include references to cats being eaten. The original memoir should be checked for the exact wording and context.",
+    "category": "Historical accounts",
+    "status": "Research lead",
+    "source": "https://www.um.edu.mt/mup/store/product/blockade-malta-1798-1800/",
+    "image": "images/history/french-blockade-1800.png",
+    "imageCaption": "Historical 1803 engraving of Valletta during the French blockade; it does not depict cats.",
+    "imageCredit": "",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:View_of_La_Valletta_during_the_siege_of_1800_engraved_by_Francis_Chesham_1803,_after_Captain_James_Weir_-_53828.jpg",
+    "imageAlt": "Historical 1803 engraving of Valletta during the French blockade; it does not depict cats."
+  },
+  {
+    "id": 4,
+    "period": "1833",
+    "date": "1833",
+    "title": "A cat in Maltese artwork",
+    "description": "A work attributed to V. Fenech, Woman Combing the Cotton, has been identified as a potential early depiction of a cat in Maltese domestic life. The artwork and its catalogue details need verification.",
+    "category": "Art",
+    "status": "Research lead",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "image": "images/history/woman-combing-cotton-1833.png",
+    "imageCaption": "Historical 1833 artwork, Woman Combing the Cotton, featuring a black cat.",
+    "imageCredit": "",
+    "imageSource": "https://www.researchgate.net/publication/306914266_The_Blue_Cats_of_Malta",
+    "imageAlt": "Historical 1833 artwork, Woman Combing the Cotton, featuring a black cat.",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 5,
+    "period": "1857",
+    "date": "1857",
+    "title": "Cats and sailors’ superstitions",
+    "description": "A published nineteenth-century anecdote links Maltese cats aboard a ship with fears of stormy weather. This should be presented as a period belief, not as a real cause of storms.",
+    "category": "Folklore",
+    "status": "Research lead",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "image": "images/history/grand-harbour-1859.png",
+    "imageCaption": "Historical Grand Harbour lithograph by Louis Le Breton (1859); maritime context, not a depiction of the superstition.",
+    "imageCredit": "",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Louis_Le_Breton,_Malte,_Vue_prise_de_la_Mer.jpg",
+    "imageAlt": "Historical Grand Harbour lithograph by Louis Le Breton (1859); maritime context, not a depiction of the superstition."
+  },
+  {
+    "id": 6,
+    "period": "1900",
+    "date": "1900",
+    "title": "Early animal protection in Malta",
+    "description": "The origins of the Malta Society for the Protection and Care of Animals date to around the beginning of the twentieth century. The exact founding date and early activities merit archival checking.",
+    "category": "Welfare",
+    "status": "Research lead",
+    "source": "https://www.maltaspca.org/",
+    "image": "images/history/malta-animal-welfare-1900.png",
+    "imageCaption": "Historical photograph of Valletta, approximately early 20th century; contextual, not an SPCA archive photograph. Exact date not independently verified.",
+    "imageCredit": "",
+    "imageSource": "",
+    "imageAlt": "Historical photograph of Valletta, approximately early 20th century; contextual, not an SPCA archive photograph. Exact date not independently verified.",
+    "imageResearchNote": "Malta SPCA early archive or original founding document needed."
+  },
+  {
+    "id": 7,
+    "period": "1967",
+    "date": "1967",
+    "title": "Recording Maltese animal folklore",
+    "description": "Folklorist Ġużè Cassar Pullicino published research on animal-related Maltese language and traditions, providing an important source for cat beliefs and sayings.",
+    "category": "Folklore",
+    "status": "Published study",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/26041",
+    "image": "images/history/maltese-animal-folklore-1967.png",
+    "imageCaption": "Original opening page of J. Cassar-Pullicino’s study, Ethno-Linguistic Aspects of Animals in Malta.",
+    "imageCredit": "",
+    "imageSource": "https://www.um.edu.mt/library/oar/handle/123456789/26041",
+    "imageAlt": "Original opening page of J. Cassar-Pullicino’s study, Ethno-Linguistic Aspects of Animals in Malta.",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 8,
+    "period": "2004",
+    "date": "2004",
+    "title": "Cats on Maltese postage stamps",
+    "description": "On 26 March 2004 MaltaPost issued five cat-themed stamps designed by Harry Borg, showing close-up portraits of cats. The set reflected the affection for cats in Malta’s everyday culture.",
+    "category": "Art",
+    "status": "Documented",
+    "source": "https://timesofmalta.com/article/stamp-issue-features-cats.126941",
+    "image": "images/history/malta-cat-stamps-2004.png",
+    "imageCaption": "Original 2004 Malta cat stamp set (five stamps).",
+    "imageCredit": "",
+    "imageSource": "https://timesofmalta.com/article/stamp-issue-features-cats.126941",
+    "imageAlt": "Original 2004 Malta cat stamp set (five stamps).",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 9,
+    "period": "2009",
+    "date": "23 December 2009",
+    "title": "The Qattus sculpture",
+    "description": "Matthew Pandolfino’s giant Qattus sculpture was inaugurated at Ta’ Qali National Park. The public-art project invited other artists to treat the cat as a creative canvas.",
+    "category": "Monuments",
+    "status": "Documented",
+    "source": "https://timesofmalta.com/article/catwalk.287195",
+    "image": "images/history/qattus-sculpture-2009.png",
+    "imageCaption": "Photograph of the actual Qattus sculpture at Ta’ Qali.",
+    "imageCredit": "",
+    "imageSource": "https://timesofmalta.com/article/catwalk.287195",
+    "imageAlt": "Photograph of the actual Qattus sculpture at Ta’ Qali.",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 14,
+    "period": "2015",
+    "date": "2015 (photographed)",
+    "title": "The fisherman and cat at Spinola Bay",
+    "description": "A public sculpture of a fisherman and cat stands at Spinola Bay, St Julian’s. A dated photograph documents the sculpture in March 2015; its installation date requires separate verification.",
+    "category": "Monuments",
+    "status": "Photographic evidence",
+    "source": "https://commons.wikimedia.org/wiki/File:Fisherman_and_cat_sculpture.jpg",
+    "image": "images/history/spinola-bay-cat-sculpture.png",
+    "imageCaption": "Photograph of the actual fisherman-and-cat sculpture at Spinola Bay; photo by Anton Zelenov, CC BY-SA 4.0.",
+    "imageCredit": "Photo: Anton Zelenov, CC BY-SA 4.0; Wikimedia Commons. Changes: none.",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Fisherman_and_cat_sculpture.jpg",
+    "imageAlt": "Photograph of the actual fisherman-and-cat sculpture at Spinola Bay; photo by Anton Zelenov, CC BY-SA 4.0."
+  },
+  {
+    "id": 10,
+    "period": "2016",
+    "date": "2016",
+    "title": "The Blue Cats of Malta",
+    "description": "A Heritage Malta research article explored the historical and cultural associations of Malta’s blue-grey cats, drawing together archaeological, artistic and written references.",
+    "category": "Research",
+    "status": "Published study",
+    "source": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "image": "images/history/blue-cats-research-2016.png",
+    "imageCaption": "Cover of The Blue Cats of Malta by George Attard and Anthony Gruppetta.",
+    "imageCredit": "",
+    "imageSource": "https://www.um.edu.mt/library/oar/handle/123456789/21697",
+    "imageAlt": "Cover of The Blue Cats of Malta by George Attard and Anthony Gruppetta.",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 11,
+    "period": "2017",
+    "date": "2017",
+    "title": "The cat at Fomm ir-Riħ",
+    "description": "The giant cat at Fomm ir-Riħ was created in 2017 as part of Il-Warda tar-Riħ, inspired by traditional Mġarr beliefs about cats and changing wind directions.",
+    "category": "Monuments",
+    "status": "Documented",
+    "source": "https://www.guidememalta.com/en/did-you-know-the-story-behind-the-giant-cat-at-fomm-ir-ri",
+    "image": "images/history/fomm-ir-rih-cat-2017.png",
+    "imageCaption": "Photograph of the cat-shaped weather vane at Fomm ir-Riħ.",
+    "imageCredit": "",
+    "imageSource": "https://www.guidememalta.com/en/did-you-know-the-story-behind-the-giant-cat-at-fomm-ir-ri",
+    "imageAlt": "Photograph of the cat-shaped weather vane at Fomm ir-Riħ.",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 12,
+    "period": "2023",
+    "date": "2023",
+    "title": "Cats of Malta on screen",
+    "description": "The documentary Cats of Malta explores the relationship between Malta’s community cats and the people who care for them.",
+    "category": "Modern Malta",
+    "status": "Documentary",
+    "source": "https://www.imdb.com/find/?q=Cats%20of%20Malta",
+    "image": "images/history/cats-of-malta-documentary-2023.png",
+    "imageCaption": "Official promotional poster for Cats of Malta documentary.",
+    "imageCredit": "",
+    "imageSource": "https://studiodome.com/titles/cats-of-malta",
+    "imageAlt": "Official promotional poster for Cats of Malta documentary.",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  },
+  {
+    "id": 13,
+    "period": "2025",
+    "date": "4 April 2025",
+    "title": "Cats return to Maltese stamps",
+    "description": "MaltaPost released four cat-themed stamps painted by Andrew Micallef. The settings include the Gozo Citadel, Marsaxlokk, Mġarr Harbour and Siġġiewi.",
+    "category": "Art",
+    "status": "Documented",
+    "source": "https://www.maltapost.com/file.aspx?f=74012",
+    "image": "images/history/malta-cat-stamps-2025.png",
+    "imageCaption": "Original 2025 MaltaPost Cats Series II stamp set (four stamps).",
+    "imageCredit": "",
+    "imageSource": "https://www.maltapost.com/news-details?id=6450",
+    "imageAlt": "Original 2025 MaltaPost Cats Series II stamp set (four stamps).",
+    "imageResearchNote": "Original visual identified at linked publisher/archive. Image file not locally embedded; check permission before reuse."
+  }
+];
+const timelineTrack = document.getElementById('timelineTrack');
+const viewport = document.getElementById('timelineViewport');
+const modal = document.getElementById('historyModal');
+let currentEvent = 0;
+let previousFocus = null;
+function renderTimeline(){
+  historyEvents.forEach((item,index)=>{
+    const button=document.createElement('button');
+    button.type='button';button.className='timeline-event';
+    button.setAttribute('aria-label',item.date+': '+item.title);
+    const date=document.createElement('span');date.className='date';date.textContent=item.period;
+    const dot=document.createElement('span');dot.className='dot';dot.setAttribute('aria-hidden','true');
+    const title=document.createElement('span');title.className='event-name';title.textContent=item.title;
+    const type=document.createElement('span');type.className='event-type';type.textContent=item.category;
+    button.append(date,dot,title,type);button.addEventListener('click',()=>openStory(index));timelineTrack.append(button);
+  });
+}
+function openStory(index){
+  currentEvent=index;const item=historyEvents[index];previousFocus=document.activeElement;
+  document.getElementById('modalDate').textContent=item.date;
+  document.getElementById('modalTitle').textContent=item.title;
+  document.getElementById('modalDescription').textContent=item.description;
+  const photo=document.getElementById('modalImage');
+  photo.hidden=!item.image;document.querySelector('.history-photo').hidden=!(item.image||item.imageSource);
+  if(item.image){photo.src=item.image;photo.alt=item.imageAlt||item.title;photo.onerror=function(){this.hidden=true;document.getElementById('modalImageCaption').textContent='Image currently unavailable. We are researching the original historical artwork or document.';};}else{photo.removeAttribute('src');photo.alt='';}
+  document.getElementById('modalImageCaption').textContent=(item.imageCaption||'')+(item.imageCredit?' — '+item.imageCredit:'');
+  const photoLink=document.getElementById('photoSourceLink');
+  photoLink.hidden=!item.imageSource;photoLink.href=item.imageSource||'#';photoLink.textContent=item.image?'View image source and attribution':'View authentic image at original source';
+  document.getElementById('modalStatus').textContent=item.category+' · '+item.status;
+  document.getElementById('modalSource').href=item.source;
+  document.getElementById('modalPrevious').disabled=index===0;
+  document.getElementById('modalNext').disabled=index===historyEvents.length-1;
+  modal.hidden=false;document.body.style.overflow='hidden';document.getElementById('modalClose').focus();
+}
+function closeStory(){modal.hidden=true;document.body.style.overflow='';if(previousFocus)previousFocus.focus()}
+document.getElementById('modalClose').addEventListener('click',closeStory);
+modal.addEventListener('click',event=>{if(event.target===modal)closeStory()});
+document.getElementById('modalPrevious').addEventListener('click',()=>{if(currentEvent>0)openStory(currentEvent-1)});
+document.getElementById('modalNext').addEventListener('click',()=>{if(currentEvent<historyEvents.length-1)openStory(currentEvent+1)});
+document.addEventListener('keydown',event=>{
+ if(modal.hidden)return;
+ if(event.key==='Escape')closeStory();
+ if(event.key==='ArrowLeft'&&currentEvent>0)openStory(currentEvent-1);
+ if(event.key==='ArrowRight'&&currentEvent<historyEvents.length-1)openStory(currentEvent+1);
+ if(event.key==='Tab'){
+   const controls=[...modal.querySelectorAll('button:not(:disabled),a[href]')];const first=controls[0],last=controls[controls.length-1];
+   if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus()}
+   else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus()}
+ }
+});
+document.getElementById('scrollBack').addEventListener('click',()=>viewport.scrollBy({left:-480,behavior:'smooth'}));
+document.getElementById('scrollForward').addEventListener('click',()=>viewport.scrollBy({left:480,behavior:'smooth'}));
+renderTimeline();
+</script>
+</body>
+</html>
