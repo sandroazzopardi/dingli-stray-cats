@@ -305,22 +305,25 @@ a {
 }
   
 /* SHARE THIS PAGE */
-.share-section { background:#fff; text-align:center; padding:36px 20px 40px; }
-.share-section h2 { color:var(--ink); font-size:24px; margin:0 0 8px; }
-.share-section p { color:var(--muted); font-size:15px; margin:0 0 20px; }
-.share-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
-.share-actions a, .share-actions button { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:30px; padding:12px 22px; font:700 14px Poppins,sans-serif; text-decoration:none; cursor:pointer; }
+.share-section { background:#fff; text-align:center; padding:18px 20px 20px; }
+.share-section h2 { color:var(--ink); font-size:21px; margin:0 0 4px; }
+.share-section p { color:var(--muted); font-size:14px; margin:0 0 12px; }
+.share-actions { display:flex; justify-content:center; flex-wrap:wrap; gap:9px; }
+.share-actions a, .share-actions button { display:inline-flex; align-items:center; justify-content:center; border:0; border-radius:30px; padding:9px 18px; font:700 14px Poppins,sans-serif; text-decoration:none; cursor:pointer; }
 .share-facebook { background:#1877f2; color:#fff; }
 .share-whatsapp { background:#168a50; color:#fff; }
 .share-copy { background:var(--red); color:#fff; }
-.share-feedback { min-height:20px; margin-top:12px; font-size:13px; color:var(--muted); }
-  </style>
+.share-feedback { min-height:0; margin-top:5px; font-size:13px; color:var(--muted); }
+  
+/* Match the donation-panel arrows on the homepage */
+.top-help summary { display:flex; align-items:center; justify-content:center; gap:12px; }
+.help-chevron { display:inline-block; width:9px; height:9px; border-right:2px solid #fff; border-bottom:2px solid #fff; transform:rotate(45deg); margin-top:-5px; flex-shrink:0; }
+.top-help[open] .help-chevron { transform:rotate(225deg); margin-top:5px; }
+</style>
  </head>
  <body>
   <details class="top-help">
-   <summary>
-    ⌄   DONATE &amp; HELP OUR CATS   ⌄
-   </summary>
+   <summary><span class="help-chevron" aria-hidden="true"></span><span>DONATE &amp; HELP OUR CATS</span><span class="help-chevron" aria-hidden="true"></span></summary>
    <div class="inside">
     Help us feed and care for stray cats in Dingli. Revolut / BOV Pay:
     <strong>
