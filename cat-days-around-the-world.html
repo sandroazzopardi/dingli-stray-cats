@@ -414,12 +414,12 @@ a {
 .top-help-inner { text-align: center; }
 .top-help-option { text-align: center; }
 .top-help-option-with-image {
-    flex-direction: column;
-    justify-content: center;
+    /* Match the homepage: image beside the text, not stacked above it. */
+    flex-direction: row;
     align-items: center;
-    gap: 8px;
+    gap: 15px;
 }
-.top-help-option-with-image > div { width: 100%; text-align: center; }
+.top-help-option-with-image > div { flex: 1; min-width: 0; text-align: center; }
 
 
 @media (max-width:600px) {
