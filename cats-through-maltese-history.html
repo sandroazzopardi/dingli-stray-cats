@@ -499,6 +499,11 @@
 .share-facebook{background:#1877f2;color:#fff}.share-whatsapp{background:#168a50;color:#fff}.share-copy{background:#B71819;color:#fff}
 .share-feedback{min-height:0;margin-top:5px;font-size:12px;color:#66717d}
 @media(max-width:600px){.share-section{padding:16px 12px 18px}.share-section h2{font-size:19px}.share-actions a,.share-actions button{padding:9px 14px}}
+
+/* Sharing individual history stories */
+.history-share-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:17px;align-items:center}
+.history-share-actions a,.history-share-actions button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:22px;padding:9px 13px;font:600 13px Poppins,sans-serif;text-decoration:none;cursor:pointer;color:#fff}
+.history-share-actions .share-facebook{background:#1877f2}.history-share-actions .share-whatsapp{background:#168a50}.history-share-actions .share-copy{background:#B71819}
     </style>
 </head>
 
@@ -604,6 +609,12 @@
         <figure class="history-photo"><img id="modalImage" alt="" loading="lazy"><figcaption id="modalImageCaption"></figcaption><p style="margin:8px 0"><a id="photoSourceLink" target="_blank" rel="noopener noreferrer" hidden>View photograph, attribution and licence</a></p></figure>
         <p class="modal-description" id="modalDescription"></p><span class="modal-tag" id="modalStatus"></span>
         <p class="modal-source"><strong>Research source:</strong> <a id="modalSource" target="_blank" rel="noopener noreferrer">View reference</a></p>
+        <div class="history-share-actions" aria-label="Share this historical story">
+          <a id="historyShareFacebook" class="share-facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+          <a id="historyShareWhatsApp" class="share-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          <button id="historyCopyLink" class="share-copy" type="button">Copy story link</button>
+        </div>
+        <div id="historyShareFeedback" class="share-feedback" role="status" aria-live="polite"></div>
         <div class="modal-nav"><button id="modalPrevious" type="button">&#8592; Previous</button><button id="modalNext" type="button">Next &#8594;</button></div>
       </div>
     </div>
@@ -943,6 +954,10 @@ function openStory(index){
   document.getElementById('modalSource').href=item.source;
   document.getElementById('modalPrevious').disabled=index===0;
   document.getElementById('modalNext').disabled=index===historyEvents.length-1;
+  const storyUrl='https://dinglistraycats.org/share/history/story-'+item.id+'.html';
+  document.getElementById('historyShareFacebook').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(storyUrl);
+  document.getElementById('historyShareWhatsApp').href='https://api.whatsapp.com/send?text='+encodeURIComponent(item.title+' — '+storyUrl);
+  document.getElementById('historyShareFeedback').textContent='';
   modal.hidden=false;document.body.style.overflow='hidden';document.getElementById('modalClose').focus();
 }
 function closeStory(){modal.hidden=true;document.body.style.overflow='';if(previousFocus)previousFocus.focus()}
@@ -963,7 +978,21 @@ document.addEventListener('keydown',event=>{
 });
 document.getElementById('scrollBack').addEventListener('click',()=>viewport.scrollBy({left:-480,behavior:'smooth'}));
 document.getElementById('scrollForward').addEventListener('click',()=>viewport.scrollBy({left:480,behavior:'smooth'}));
+document.getElementById('historyCopyLink').addEventListener('click',async()=>{
+  const storyUrl='https://dinglistraycats.org/share/history/story-'+historyEvents[currentEvent].id+'.html';
+  const status=document.getElementById('historyShareFeedback');
+  try{await navigator.clipboard.writeText(storyUrl);status.textContent='Story link copied!';}
+  catch(e){status.textContent='Copy this link: '+storyUrl;}
+});
 renderTimeline();
+function openHistoryHash(){
+  const m=location.hash.match(/^#history-(\d+)$/);
+  if(!m)return;
+  const index=historyEvents.findIndex(e=>e.id===Number(m[1]));
+  if(index>=0)openStory(index);
+}
+window.addEventListener('hashchange',openHistoryHash);
+openHistoryHash();
 </script>
 <script>
 (function(){
@@ -978,4 +1007,4 @@ renderTimeline();
 })();
 </script>
 </body>
-</html
+</html>
