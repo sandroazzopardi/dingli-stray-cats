@@ -753,7 +753,7 @@
 /* WHO ARE WE CTA */
 
 .who-are-we-cta {
-    background: #ffffff;
+    background: #B71819;
     width: 100%;
     max-width: 1800px;
     margin: 0 auto;
@@ -767,14 +767,14 @@
 }
 
 .who-are-we-cta h2 {
-    color: #333333;
+    color: #ffffff;
     font-size: 26px;
     font-weight: 700;
     margin: 0 0 8px;
 }
 
 .who-are-we-cta p {
-    color: #666666;
+    color: #ffffff;
     font-size: 16px;
     margin: 0 0 20px;
 }
@@ -783,8 +783,8 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    background: #B71819;
-    color: #ffffff;
+    background: #ffffff;
+    color: #B71819;
     padding: 12px 22px;
     border-radius: 25px;
     font-size: 15px;
@@ -829,6 +829,14 @@
 }
      
 
+/* MALTESE CAT SAYINGS CTA */
+.sayings-cta {background:#ffffff;width:100%;max-width:1800px;margin:0 auto;padding:40px 20px;text-align:center;}
+.sayings-cta-content {max-width:900px;margin:0 auto;}
+.sayings-cta h2 {color:#333333;font-size:30px;font-weight:700;margin:0 0 10px;}
+.sayings-cta p {color:#666666;font-size:17px;line-height:1.6;margin:0 0 25px;}
+.sayings-cta-button {display:inline-flex;align-items:center;gap:10px;background:#B71819;color:#ffffff;padding:15px 28px;border-radius:30px;font-size:16px;font-weight:700;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,.18);transition:transform .2s ease,box-shadow .2s ease;}
+.sayings-cta-button:hover {transform:translateY(-3px);box-shadow:0 7px 18px rgba(0,0,0,.25);}
+@media(max-width:600px){.sayings-cta h2{font-size:26px}.sayings-cta p{font-size:16px}}
 /* CATS THROUGH MALTESE HISTORY CTA */
 .history-cta {background:#B71819;width:100%;max-width:1800px;margin:0 auto;padding:38px 20px 42px;text-align:center;}
 .history-cta-content {max-width:900px;margin:0 auto;}
@@ -982,6 +990,15 @@ loadFacebookFeed();
         <a href="cats-through-maltese-history.html" class="history-cta-button" onclick="if(typeof gtag === 'function') gtag('event','cats_history_click',{'link_location':'homepage'});">
             EXPLORE THE TIMELINE <span aria-hidden="true">→</span>
         </a>
+    </div>
+</section>
+
+<!-- MALTESE CAT SAYINGS CTA -->
+<section class="sayings-cta" aria-labelledby="sayings-title">
+    <div class="sayings-cta-content">
+        <h2 id="sayings-title">Maltese Cat Sayings &amp; Proverbs</h2>
+        <p>Discover the wisdom, humour and folklore of Malta through traditional cat sayings, with English translations and explanations.</p>
+        <a href="maltese-cat-sayings.html" class="sayings-cta-button" onclick="if(typeof gtag === 'function') gtag('event','cat_sayings_click',{'link_location':'homepage'});">EXPLORE THE SAYINGS <span aria-hidden="true">→</span></a>
     </div>
 </section>
 
