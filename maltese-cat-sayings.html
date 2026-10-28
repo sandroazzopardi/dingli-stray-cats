@@ -506,6 +506,17 @@
 @media(max-width:850px){.sayings-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:570px){.sayings-grid{grid-template-columns:1fr}.saying-card{min-height:0}.saying-card .maltese{font-size:18px}}
 
+
+/* Per-saying sharing, compact and mobile-friendly */
+.saying-card-wrap{min-width:0;display:flex;flex-direction:column}
+.saying-card-wrap .saying-card{width:100%;flex:1}
+.saying-share-row{display:flex;gap:7px;justify-content:flex-end;padding:8px 2px 0;flex-wrap:wrap}
+.saying-share-button,.saying-share-link{border:1px solid #e2d5d5;border-radius:20px;background:white;color:#B71819;padding:6px 11px;font:600 12px Poppins,sans-serif;text-decoration:none;cursor:pointer}
+.saying-share-link{color:#1877f2}
+.saying-modal-share{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin:20px 0 4px}
+.saying-modal-share a,.saying-modal-share button{border:0;border-radius:22px;padding:9px 13px;font:600 13px Poppins,sans-serif;text-decoration:none;cursor:pointer;color:#fff}
+.saying-modal-share .facebook{background:#1877f2}.saying-modal-share .whatsapp{background:#168a50}.saying-modal-share .copy{background:#B71819}
+.saying-share-feedback{font-size:12px;color:#666;min-height:16px;margin-top:6px}
     </style>
 </head>
 
@@ -606,6 +617,12 @@
       <button class="modal-close" id="sayingClose" aria-label="Close saying">&times;</button><p class="modal-date" id="sayingCategory"></p><h2 id="sayingTitle"></h2><p class="saying-translation" id="sayingTranslation"></p>
       <h3 class="saying-heading">What does it mean?</h3><p class="modal-description" id="sayingExplanation"></p>
       <p class="modal-source"><strong>Reference:</strong> <a id="sayingSource" target="_blank" rel="noopener noreferrer">View source</a></p>
+      <div class="saying-modal-share" aria-label="Share this saying">
+        <a id="sayingShareFacebook" class="facebook" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a id="sayingShareWhatsApp" class="whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <button id="sayingCopyLink" class="copy" type="button">Copy link</button>
+      </div>
+      <p id="sayingShareFeedback" class="saying-share-feedback" role="status" aria-live="polite"></p>
       <div class="modal-nav"><button id="sayingPrev">&#8592; Previous</button><button id="sayingNext">Next &#8594;</button></div>
     </div></div>
     </main>
@@ -666,15 +683,87 @@ let activeCategory='All', visibleSayings=[], selectedIndex=0, lastFocus=null;
 const grid=document.getElementById('sayingsGrid'), modal=document.getElementById('sayingModal');
 const filterWrap=document.getElementById('sayingsFilters');
 categories.forEach(cat=>{const b=document.createElement('button');b.textContent=cat;b.type='button';b.onclick=()=>{activeCategory=cat;renderSayings()};filterWrap.appendChild(b)});
-function renderSayings(){visibleSayings=sayings.filter(s=>activeCategory==='All'||s.category===activeCategory);grid.replaceChildren();[...filterWrap.children].forEach((b,i)=>{b.classList.toggle('active',categories[i]===activeCategory);b.setAttribute('aria-pressed',categories[i]===activeCategory)});visibleSayings.forEach((s,i)=>{const b=document.createElement('button');b.className='saying-card';b.type='button';const cat=document.createElement('span');cat.className='category';cat.textContent=s.category;const mt=document.createElement('span');mt.className='maltese';mt.textContent=s.mt;const en=document.createElement('span');en.className='english';en.textContent='“'+s.en+'”';const more=document.createElement('span');more.className='explore';more.textContent='Discover the meaning →';b.append(cat,mt,en,more);b.onclick=()=>openSaying(i);grid.appendChild(b)});document.getElementById('sayingsEmpty').hidden=visibleSayings.length!==0}
-function openSaying(i,retain=false){if(!retain)lastFocus=document.activeElement;selectedIndex=i;const s=visibleSayings[i];document.getElementById('sayingCategory').textContent=s.category;document.getElementById('sayingTitle').textContent=s.mt;document.getElementById('sayingTranslation').textContent='“'+s.en+'”';document.getElementById('sayingExplanation').textContent=s.meaning;document.getElementById('sayingSource').href=s.source;document.getElementById('sayingPrev').disabled=i===0;document.getElementById('sayingNext').disabled=i===visibleSayings.length-1;modal.hidden=false;document.body.style.overflow='hidden';document.getElementById('sayingClose').focus()}
-function closeSaying(){modal.hidden=true;document.body.style.overflow='';if(lastFocus)lastFocus.focus()}
+// Stable links use the original saying's position, regardless of the active filter.
+function sayingUrl(s){return location.href.split('#')[0]+'#saying-'+(sayings.indexOf(s)+1)}
+function shareText(s){return s.mt+' — '+s.en+' | Dingli Stray Cats'}
+function facebookShare(s){return 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(sayingUrl(s))}
+function whatsappShare(s){return 'https://api.whatsapp.com/send?text='+encodeURIComponent(shareText(s)+' '+sayingUrl(s))}
+async function copySaying(s,feedback){
+  try{await navigator.clipboard.writeText(sayingUrl(s));feedback.textContent='Link copied!'}
+  catch(e){feedback.textContent='Copy this link: '+sayingUrl(s)}
+}
+function renderSayings(){
+  visibleSayings=sayings.filter(s=>activeCategory==='All'||s.category===activeCategory);
+  grid.replaceChildren();
+  [...filterWrap.children].forEach((b,i)=>{b.classList.toggle('active',categories[i]===activeCategory);b.setAttribute('aria-pressed',categories[i]===activeCategory)});
+  visibleSayings.forEach((s,i)=>{
+    const wrap=document.createElement('div');wrap.className='saying-card-wrap';
+    const b=document.createElement('button');b.className='saying-card';b.type='button';
+    const cat=document.createElement('span');cat.className='category';cat.textContent=s.category;
+    const mt=document.createElement('span');mt.className='maltese';mt.textContent=s.mt;
+    const en=document.createElement('span');en.className='english';en.textContent='“'+s.en+'”';
+    const more=document.createElement('span');more.className='explore';more.textContent='Discover the meaning →';
+    b.append(cat,mt,en,more);b.onclick=()=>openSaying(i);
+    const row=document.createElement('div');row.className='saying-share-row';
+    const fb=document.createElement('a');fb.className='saying-share-link';fb.textContent='Share on Facebook';fb.href=facebookShare(s);fb.target='_blank';fb.rel='noopener noreferrer';
+    const wa=document.createElement('a');wa.className='saying-share-button';wa.textContent='WhatsApp';wa.href=whatsappShare(s);wa.target='_blank';wa.rel='noopener noreferrer';
+    const cp=document.createElement('button');cp.type='button';cp.className='saying-share-button';cp.textContent='Copy link';
+    const status=document.createElement('span');status.setAttribute('role','status');status.style.cssText='font-size:11px;color:#666;align-self:center';
+    cp.onclick=()=>copySaying(s,status);
+    row.append(fb,wa,cp,status);wrap.append(b,row);grid.appendChild(wrap);
+  });
+  document.getElementById('sayingsEmpty').hidden=visibleSayings.length!==0;
+}
+function openSaying(i,retain=false,updateHash=true){
+  if(!retain)lastFocus=document.activeElement;
+  selectedIndex=i;const s=visibleSayings[i];
+  document.getElementById('sayingCategory').textContent=s.category;
+  document.getElementById('sayingTitle').textContent=s.mt;
+  document.getElementById('sayingTranslation').textContent='“'+s.en+'”';
+  document.getElementById('sayingExplanation').textContent=s.meaning;
+  document.getElementById('sayingSource').href=s.source;
+  document.getElementById('sayingPrev').disabled=i===0;
+  document.getElementById('sayingNext').disabled=i===visibleSayings.length-1;
+  document.getElementById('sayingShareFacebook').href=facebookShare(s);
+  document.getElementById('sayingShareWhatsApp').href=whatsappShare(s);
+  document.getElementById('sayingCopyLink').onclick=()=>copySaying(s,document.getElementById('sayingShareFeedback'));
+  document.getElementById('sayingShareFeedback').textContent='';
+  modal.hidden=false;document.body.style.overflow='hidden';
+  if(updateHash&&location.hash!=='#saying-'+(sayings.indexOf(s)+1))history.replaceState(null,'',sayingUrl(s));
+  document.getElementById('sayingClose').focus();
+}
+function closeSaying(){
+  modal.hidden=true;document.body.style.overflow='';
+  if(/^#saying-\d+$/.test(location.hash))history.replaceState(null,'',location.pathname+location.search);
+  if(lastFocus&&lastFocus.isConnected)lastFocus.focus();
+}
 document.getElementById('sayingClose').onclick=closeSaying;
 document.getElementById('sayingPrev').onclick=()=>{if(selectedIndex>0)openSaying(selectedIndex-1,true)};
 document.getElementById('sayingNext').onclick=()=>{if(selectedIndex<visibleSayings.length-1)openSaying(selectedIndex+1,true)};
 modal.addEventListener('click',e=>{if(e.target===modal)closeSaying()});
-document.addEventListener('keydown',e=>{if(modal.hidden)return;if(e.key==='Escape')closeSaying();if(e.key==='ArrowLeft'&&selectedIndex>0)openSaying(selectedIndex-1,true);if(e.key==='ArrowRight'&&selectedIndex<visibleSayings.length-1)openSaying(selectedIndex+1,true);if(e.key==='Tab'){const els=[...modal.querySelectorAll('button:not(:disabled),a[href]')];const first=els[0],last=els[els.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}}});
+document.addEventListener('keydown',e=>{
+  if(modal.hidden)return;
+  if(e.key==='Escape')closeSaying();
+  if(e.key==='ArrowLeft'&&selectedIndex>0)openSaying(selectedIndex-1,true);
+  if(e.key==='ArrowRight'&&selectedIndex<visibleSayings.length-1)openSaying(selectedIndex+1,true);
+  if(e.key==='Tab'){
+    const els=[...modal.querySelectorAll('button:not(:disabled),a[href]')];const first=els[0],last=els[els.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+  }
+});
+function openSayingFromUrl(){
+  const match=/^#saying-(\d+)$/.exec(location.hash);
+  if(!match){if(!modal.hidden){modal.hidden=true;document.body.style.overflow=''}return}
+  const index=Number(match[1])-1;
+  if(!Number.isInteger(index)||index<0||index>=sayings.length)return;
+  if(activeCategory!=='All'){activeCategory='All';renderSayings()}
+  openSaying(index,false,false);
+}
+window.addEventListener('hashchange',openSayingFromUrl);
+
 renderSayings();
+openSayingFromUrl();
 </script>
 
 </body>
