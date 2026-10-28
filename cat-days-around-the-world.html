@@ -1,1 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBVDYR5Q0G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-JBVDYR5Q0G');
+  </script>
 
+  <meta charset="utf-8"/>
+  <meta content="width=device-width,initial-scale=1" name="viewport"/>
+  <title>
+   Cat Days Around the World | Dingli Stray Cats
+  </title>
+  <meta content="Explore cat celebration days around the world on an interactive map and calendar." name="description"/>
+  <link href="https://dinglistraycats.org/cat-days-around-the-world.html" rel="canonical"/>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="DingliCats_FAV.JPG" rel="icon" type="image/JPG"/>
+  <style>
+   :root {
+  --red:#B71819;
+  --blue:#73A6E0;
+  --ink:#30343a;
+  --muted:#66717d;
+  --pale:#edf5fd}
+* {
+  box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Poppins,sans-serif;
+  color:var(--ink);
+  background:#f5f5f5}
+a {
+  color:inherit}
+.top-help {
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:var(--red);
+  color:#fff;
+  max-width:1800px;
+  margin:auto;
+  text-align:center}
+.top-help summary {
+  cursor:pointer;
+  padding:7px 20px;
+  font-size:17px;
+  font-weight:700;
+  list-style:none}
+.top-help summary::-webkit-details-marker {
+  display:none}
+.top-help .inside {
+  background:#fce8e8;
+  color:#444;
+  padding:18px 20px;
+  font-size:14px}
+.top-help .inside a {
+  color:var(--red);
+  font-weight:700}
+.header {
+  text-align:center;
+  padding:28px 20px 22px}
+.logo {
+  width:190px;
+  max-width:60%;
+  display:block;
+  margin:0 auto 12px}
+.header h1 {
+  font-size:clamp(26px,4vw,39px);
+  margin:8px 0;
+  color:var(--red)}
+.intro {
+  max-width:800px;
+  margin:0 auto;
+  color:var(--blue);
+  font-size:19px;
+  line-height:1.65}
+.wrap {
+  max-width:1190px;
+  margin:auto;
+  padding:0 18px 42px}
+.today {
+  background:var(--red);
+  color:#fff;
+  border-radius:16px;
+  padding:22px 26px;
+  margin:10px 0 22px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap}
+.today .date {
+  font-weight:700;
+  font-size:clamp(22px,3vw,31px)}
+.today .status {
+  font-size:16px;
+  max-width:700px}
+.panel {
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 4px 22px #00000010;
+  padding:24px;
+  margin-bottom:20px}
+.panel h2 {
+  font-size:22px;
+  margin:0 0 12px}
+.controls {
+  display:flex;
+  align-items:end;
+  gap:12px;
+  flex-wrap:wrap;
+  margin:0 0 12px}
+.controls label {
+  font-size:13px;
+  font-weight:700;
+  display:flex;
+  flex-direction:column;
+  gap:5px}
+.controls input {
+  font:inherit;
+  border:1px solid #ccd5dc;
+  border-radius:8px;
+  padding:9px 12px;
+  max-width:210px}
+.btn {
+  border:0;
+  border-radius:30px;
+  background:var(--red);
+  color:#fff;
+  font:700 14px Poppins,sans-serif;
+  padding:11px 20px;
+  cursor:pointer}
+.btn.secondary {
+  background:#e8eef4;
+  color:#333}
+.legend {
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+  font-size:13px;
+  margin:10px 0 16px}
+.legend span {
+  display:inline-flex;
+  align-items:center;
+  gap:7px}
+.dot {
+  display:inline-block;
+  width:15px;
+  height:15px;
+  border-radius:4px;
+  background:#dfe6eb}
+.dot.has {
+  background:#83b7e9}
+.dot.active {
+  background:#b71819}
+.dot.global {
+  background:#f5c45e}
+.map-frame {
+  position:relative;
+  border-radius:12px;
+  background:#eef4f8;
+  overflow:hidden;
+  border:1px solid #dde6ed;
+  min-height:300px}
+#worldmap {
+  display:block;
+  width:100%;
+  height:auto;
+  min-height:300px}
+#worldmap path {
+  stroke:#fff;
+  stroke-width:.6;
+  cursor:default;
+  transition:fill .2s}
+#worldmap path.has {
+  cursor:pointer}
+#worldmap path.has:hover,#worldmap path.has:focus {
+  stroke:#20374e;
+  stroke-width:1.6;
+  outline:none;
+  filter:brightness(.94)}
+.tooltip {
+  position:absolute;
+  pointer-events:none;
+  background:#24394d;
+  color:#fff;
+  padding:9px 12px;
+  border-radius:8px;
+  font-size:12px;
+  max-width:250px;
+  display:none;
+  box-shadow:0 3px 14px #0003}
+.map-note {
+  font-size:12px;
+  color:#6b7781;
+  margin-top:10px}
+.map-error {
+  padding:30px 20px;
+  text-align:center;
+  color:#66717d}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:13px}
+.event {
+  border:1px solid #e2e8ed;
+  background:#fff;
+  border-radius:12px;
+  padding:16px;
+  text-align:left;
+  cursor:pointer;
+  font:inherit;
+  transition:transform .15s,box-shadow .15s}
+.event:hover,.event:focus {
+  transform:translateY(-2px);
+  box-shadow:0 6px 18px #0002}
+.event.active {
+  border-color:var(--red);
+  background:#fff7f7}
+.event .day {
+  color:var(--red);
+  font-size:13px;
+  font-weight:700}
+.event .name {
+  display:block;
+  font-weight:700;
+  font-size:17px;
+  margin:4px 0}
+.event .place {
+  color:#64717c;
+  font-size:13px}
+.empty {
+  color:#65717b}
+.footer {
+  text-align:center;
+  color:#888;
+  font-size:13px;
+  padding:30px}
+.modal {
+  border:0;
+  border-radius:16px;
+  padding:0;
+  max-width:510px;
+  width:calc(100% - 30px);
+  box-shadow:0 15px 65px #0005}
+.modal::backdrop {
+  background:#1a2736a8}
+.modal-inner {
+  padding:28px}
+.modal h2 {
+  margin:0 35px 8px 0;
+  color:var(--red)}
+.modal .when {
+  color:#64717c;
+  font-weight:600}
+.modal p {
+  line-height:1.7}
+.modal a {
+  color:var(--red)}
+.close {
+  float:right;
+  border:0;
+  background:#f1f1f1;
+  border-radius:50%;
+  width:35px;
+  height:35px;
+  font-size:22px;
+  cursor:pointer}
+.section-red {
+  background:var(--red);
+  text-align:center;
+  color:white;
+  padding:38px 20px}
+.section-red h2 {
+  margin:0 0 8px}
+.section-red p {
+  margin:0 0 20px}
+.section-red a {
+  display:inline-block;
+  background:#fff;
+  color:var(--red);
+  border-radius:30px;
+  padding:12px 25px;
+  text-decoration:none;
+  font-weight:700}
+@media(max-width:600px) {
+  .panel {
+  padding:16px}
+.today {
+  padding:18px}
+.intro {
+  font-size:16px}
+}
+  </style>
+ </head>
+ <body>
+  <details class="top-help">
+   <summary>
+    ⌄   DONATE &amp; HELP OUR CATS   ⌄
+   </summary>
+   <div class="inside">
+    Help us feed and care for stray cats in Dingli. Revolut / BOV Pay:
+    <strong>
+     +356 7925 3603
+    </strong>
+    . You can also
+    <a href="bcrs-bottle-donations.html">
+     donate BCRS bottles and cans
+    </a>
+    .
+   </div>
+  </details>
+  <header class="header">
+   <a href="index.html">
+    <img alt="Dingli Stray Cats logo" class="logo" src="Dingli Stray Cats Logo New Badge.png"/>
+   </a>
+   <h1>
+    Cat Days Around the World
+   </h1>
+   <p class="intro">
+    From Japan to Italy and beyond, discover when countries celebrate cats and the stories behind their special days.
+   </p>
+  </header>
+  <main class="wrap">
+   <section aria-live="polite" class="today">
+    <div>
+     <div style="font-size:13px;letter-spacing:.09em;text-transform:uppercase">
+      Today around the world
+     </div>
+     <div class="date" id="todayDate">
+     </div>
+    </div>
+    <div class="status" id="todayStatus">
+    </div>
+   </section>
+   <section class="panel">
+    <h2>
+     Explore the world map
+    </h2>
+    <div class="controls">
+     <label>
+      Explore a date
+      <input id="selectedDate" type="date"/>
+     </label>
+     <button class="btn secondary" id="reset">
+      Back to today
+     </button>
+    </div>
+    <div class="legend">
+     <span>
+      <i class="dot active">
+      </i>
+      Celebrating on selected date
+     </span>
+     <span>
+      <i class="dot has">
+      </i>
+      Has a cat day
+     </span>
+     <span>
+      <i class="dot">
+      </i>
+      Other countries
+     </span>
+    </div>
+    <div class="map-frame" id="mapFrame">
+     <svg aria-label="Interactive world map showing national cat days" id="worldmap" role="img" viewbox="0 0 1000 510">
+     </svg>
+     <div class="tooltip" id="tip">
+     </div>
+    </div>
+    <p class="map-note">
+     Hover over or tap a blue or red country for its celebrations. Red changes as you select different dates. On 8 August, International Cat Day is celebrated globally; the map still distinguishes countries with listed national days.
+    </p>
+   </section>
+   <section class="panel">
+    <h2 id="selectedHeading">
+     Celebrations on this date
+    </h2>
+    <div class="cards" id="selectedEvents">
+    </div>
+   </section>
+   <section class="panel">
+    <h2>
+     Upcoming cat days
+    </h2>
+    <div class="cards" id="upcoming">
+    </div>
+   </section>
+  </main>
+  <section class="section-red">
+   <h2>
+    Help us celebrate cats every day
+   </h2>
+   <p>
+    Support our work caring for the stray cats of Dingli, Malta.
+   </p>
+   <a href="bcrs-bottle-donations.html">
+    DONATE HERE →
+   </a>
+  </section>
+  <footer class="footer">
+   © 2026 Dingli Stray Cats ·
+   <a href="index.html">
+    Back to home
+   </a>
+  </footer>
+  <dialog class="modal" id="detail">
+   <div class="modal-inner">
+    <button aria-label="Close" class="close" id="close">
+     ×
+    </button>
+    <h2 id="modalTitle">
+    </h2>
+    <div class="when" id="modalWhen">
+    </div>
+    <p id="modalDesc">
+    </p>
+    <a id="modalSource" rel="noopener noreferrer" target="_blank">
+     Read source →
+    </a>
+   </div>
+  </dialog>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js">
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js">
+  </script>
+  <script>
+   // Country codes are ISO 3166-1 numeric IDs used by world-atlas. Dates are month/day.
+const events = [
+  
+{
+    country:'Italy',
+    id:'380',
+    date:'02-17',
+    name:'National Cat Day · Festa del Gatto',
+    description:'Italy has celebrated its National Cat Day on 17 February since 1990, following a reader poll in Tuttogatto magazine. The date also plays with traditional superstitions about cats.',
+    source:'https://www.izs.it/IZS/Festa_Nazionale_del_Gatto/'
+  },
+  {
+    country:'Poland',
+    id:'616',
+    date:'02-17',
+    name:'World Cat Day · Dzień Kota',
+    description:'Poland celebrates cats on 17 February, using the occasion to encourage responsible ownership and help homeless cats.',
+    source:'https://crees.ku.edu/cats'
+  },
+  {
+    country:'Brazil',
+    id:'076',
+    date:'02-17',
+    name:'Cat Day · Dia do Gato',
+    description:'17 February is also listed as a cat celebration in Brazil. The observance is less uniformly documented than some other national cat days.',
+    source:'https://www.clowderpress.com/newsletter/Entries/2025/2/its-national-cat-day'
+  },
+  {
+    country:'Japan',
+    id:'392',
+    date:'02-22',
+    name:'Cat Day · Neko no Hi',
+    description:'The date 2/22 evokes “nyan nyan nyan”, the Japanese representation of a cat’s meow. The day celebrates cats in Japanese culture.',
+    source:'https://en.wikipedia.org/wiki/National_Cat_Day'
+  },
+  {
+    country:'Russia',
+    id:'643',
+    date:'03-01',
+    name:'National Cat Day',
+    description:'Russia marks its cat day on 1 March, welcoming spring and celebrating the companionship of cats.',
+    source:'https://crees.ku.edu/cats'
+  },
+  {
+    country:'Canada',
+    id:'124',
+    date:'08-08',
+    name:'Cat Day / International Cat Day',
+    description:'Canada is often listed as observing Cat Day on 8 August, coinciding with International Cat Day. Some sources also associate Canada with the US October date.',
+    source:'https://en.wikipedia.org/wiki/National_Cat_Day'
+  },
+  {
+    country:'United Kingdom',
+    id:'826',
+    date:'10-27',
+    name:'National Black Cat Day',
+    description:'This UK awareness day encourages people to appreciate and adopt black cats, which can be overlooked by potential adopters.',
+    source:'https://en.wikipedia.org/wiki/National_Cat_Day'
+  },
+  {
+    country:'United States',
+    id:'840',
+    date:'10-29',
+    name:'National Cat Day',
+    description:'Founded to raise awareness of cats needing rescue, adoption and loving homes.',
+    source:'https://ncpa.org/newsroom/qam/2025/10/29/script'
+  },
+  {
+    country:'Sweden',
+    id:'752',
+    date:'12-01',
+    name:'Cat Day · Kattens dag',
+    description:'Sweden is commonly listed as celebrating a cat day on 1 December. Some Swedish observances are tied to the first Sunday of Advent rather than a fixed date.',
+    source:'https://en.wikipedia.org/wiki/National_Cat_Day'
+  }
+];
+const international={country:'Worldwide',id:null,date:'08-08',name:'International Cat Day',description:'Observed internationally every 8 August. Established in 2002, it is now overseen by International Cat Care and promotes the health and wellbeing of cats.',source:'https://www.bsava.com/article/international-cat-care-want-happy-cats-this-international-cat-day/'};
+const all=[...events,international];const $=s=>document.querySelector(s);const today=new Date();const pad=n=>String(n).padStart(2,'0');const localISO=d=>`${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}`;const fmt=d=>d.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});const md=d=>`${pad(d.getMonth()+1)}-${pad(d.getDate())}`;$('#todayDate').textContent=fmt(today);$('#selectedDate').value=localISO(today);let selected=md(today);let mapReady=false;let paths;
+function showDetail(e){$('#modalTitle').textContent=e.name;$('#modalWhen').textContent=`${e.country} · ${new Date(2024,Number(e.date.slice(0,2))-1,Number(e.date.slice(3))).toLocaleDateString('en-GB',{day:'numeric',month:'long'})}`;$('#modalDesc').textContent=e.description;$('#modalSource').href=e.source;$('#detail').showModal()};$('#close').onclick=()=>$('#detail').close();$('#detail').onclick=e=>{if(e.target===$('#detail'))$('#detail').close()};
+function eventCard(e,active=false){const b=document.createElement('button');b.className='event'+(active?' active':'');b.innerHTML=`<span class="day"></span><span class="name"></span><span class="place"></span>`;b.querySelector('.day').textContent=new Date(2024,+e.date.slice(0,2)-1,+e.date.slice(3)).toLocaleDateString('en-GB',{day:'numeric',month:'long'});b.querySelector('.name').textContent=e.name;b.querySelector('.place').textContent=e.country;b.onclick=()=>showDetail(e);return b}
+function render(){const chosen=new Date($('#selectedDate').value+'T12:00:00');if(isNaN(chosen))return;selected=md(chosen);const on=all.filter(e=>e.date===selected);$('#selectedHeading').textContent=`Celebrations on ${chosen.toLocaleDateString('en-GB',{day:'numeric',month:'long'})}`;const target=$('#selectedEvents');target.replaceChildren();if(on.length)on.forEach(e=>target.append(eventCard(e,true)));else target.innerHTML='<p class="empty">No listed cat celebration for this date. Try another day on the calendar.</p>';const upcoming=all.map(e=>{let y=today.getFullYear(),d=new Date(y,+e.date.slice(0,2)-1,+e.date.slice(3));if(d<new Date(today.getFullYear(),today.getMonth(),today.getDate()))d=new Date(y+1,+e.date.slice(0,2)-1,+e.date.slice(3));return{e,d}}).sort((a,b)=>a.d-b.d).slice(0,6);$('#upcoming').replaceChildren(...upcoming.map(x=>eventCard(x.e,x.e.date===md(today))));if(mapReady)paths.attr('fill',d=>{const list=events.filter(e=>e.id===String(d.id).padStart(3,'0'));return list.some(e=>e.date===selected)?'#B71819':list.length?'#83b7e9':'#dfe6eb'}).attr('class',d=>events.some(e=>e.id===String(d.id).padStart(3,'0'))?'has':'');}
+const nowEvents=all.filter(e=>e.date===md(today));$('#todayStatus').textContent=nowEvents.length?nowEvents.map(e=>`${e.country}: ${e.name}`).join(' · '):'No listed national cat days today. The next celebration is just around the corner!';$('#selectedDate').addEventListener('change',render);$('#reset').onclick=()=>{$('#selectedDate').value=localISO(today);render()};render();
+async function loadMap(){const frame=$('#mapFrame');if(typeof d3==='undefined'||typeof topojson==='undefined'){frame.innerHTML='<div class="map-error">The map could not load. The interactive calendar below remains available.</div>';return}try{const data=await d3.json('https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json');const countries=topojson.feature(data,data.objects.countries).features;const svg=d3.select('#worldmap');const projection=d3.geoNaturalEarth1().fitSize([980,480],{type:'Sphere'});const geo=d3.geoPath(projection);svg.append('path').datum({type:'Sphere'}).attr('d',geo).attr('fill','#eef4f8');paths=svg.append('g').attr('transform','translate(10,15)').selectAll('path').data(countries).join('path').attr('d',geo).attr('tabindex',d=>events.some(e=>e.id===String(d.id).padStart(3,'0'))?0:null).attr('role','button').attr('aria-label',d=>{const list=events.filter(e=>e.id===String(d.id).padStart(3,'0'));return list.length?`${list[0].country}: ${list.map(e=>e.name).join(', ')}`:''});const tip=$('#tip');paths.on('mousemove',function(ev,d){const list=events.filter(e=>e.id===String(d.id).padStart(3,'0'));if(!list.length){tip.style.display='none';return}tip.textContent=`${list[0].country}: ${list.map(e=>`${e.name} (${e.date.slice(3)}/${e.date.slice(0,2)})`).join('; ')}`;tip.style.display='block';const r=frame.getBoundingClientRect();tip.style.left=Math.min(ev.clientX-r.left+12,r.width-255)+'px';tip.style.top=Math.max(8,ev.clientY-r.top-52)+'px'}).on('mouseleave',()=>tip.style.display='none').on('click',(_,d)=>{const e=events.find(e=>e.id===String(d.id).padStart(3,'0'));if(e)showDetail(e)}).on('keydown',(ev,d)=>{if(ev.key==='Enter'||ev.key===' '){const e=events.find(e=>e.id===String(d.id).padStart(3,'0'));if(e){ev.preventDefault();showDetail(e)}}});mapReady=true;render()}catch(err){frame.innerHTML='<div class="map-error">The world map is temporarily unavailable. The interactive calendar below remains available.</div>';console.error('Map failed to load',err)}}loadMap();
+  </script>
+ </body>
+</html>
