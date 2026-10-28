@@ -684,7 +684,8 @@ const grid=document.getElementById('sayingsGrid'), modal=document.getElementById
 const filterWrap=document.getElementById('sayingsFilters');
 categories.forEach(cat=>{const b=document.createElement('button');b.textContent=cat;b.type='button';b.onclick=()=>{activeCategory=cat;renderSayings()};filterWrap.appendChild(b)});
 // Stable links use the original saying's position, regardless of the active filter.
-function sayingUrl(s){return location.href.split('#')[0]+'#saying-'+(sayings.indexOf(s)+1)}
+function sayingUrl(s){return 'https://dinglistraycats.org/share/saying-'+(sayings.indexOf(s)+1)+'.html'}
+function directSayingUrl(s){return location.pathname+location.search+'#saying-'+(sayings.indexOf(s)+1)}
 function shareText(s){return s.mt+' — '+s.en+' | Dingli Stray Cats'}
 function facebookShare(s){return 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(sayingUrl(s))}
 function whatsappShare(s){return 'https://api.whatsapp.com/send?text='+encodeURIComponent(shareText(s)+' '+sayingUrl(s))}
@@ -729,7 +730,7 @@ function openSaying(i,retain=false,updateHash=true){
   document.getElementById('sayingCopyLink').onclick=()=>copySaying(s,document.getElementById('sayingShareFeedback'));
   document.getElementById('sayingShareFeedback').textContent='';
   modal.hidden=false;document.body.style.overflow='hidden';
-  if(updateHash&&location.hash!=='#saying-'+(sayings.indexOf(s)+1))history.replaceState(null,'',sayingUrl(s));
+  if(updateHash&&location.hash!=='#saying-'+(sayings.indexOf(s)+1))history.replaceState(null,'',directSayingUrl(s));
   document.getElementById('sayingClose').focus();
 }
 function closeSaying(){
