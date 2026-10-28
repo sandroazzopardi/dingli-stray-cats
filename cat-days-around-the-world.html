@@ -410,8 +410,17 @@ a {
 }
 
 
-/* Centre the introductory donation message. */
-.top-help-option:first-child { text-align:center; }
+/* Centre every donation option, including image-based options. */
+.top-help-inner { text-align: center; }
+.top-help-option { text-align: center; }
+.top-help-option-with-image {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+.top-help-option-with-image > div { width: 100%; text-align: center; }
+
 
 @media (max-width:600px) {
 .top-help-header { min-height:36px; font-size:16px; }
