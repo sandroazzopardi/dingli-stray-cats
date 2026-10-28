@@ -517,7 +517,19 @@
 .saying-modal-share a,.saying-modal-share button{border:0;border-radius:22px;padding:9px 13px;font:600 13px Poppins,sans-serif;text-decoration:none;cursor:pointer;color:#fff}
 .saying-modal-share .facebook{background:#1877f2}.saying-modal-share .whatsapp{background:#168a50}.saying-modal-share .copy{background:#B71819}
 .saying-share-feedback{font-size:12px;color:#666;min-height:16px;margin-top:6px}
-    </style>
+    
+/* Compact whole-page sharing, independent of individual saying sharing */
+.page-share-section{background:#fff;text-align:center;padding:18px 20px 20px}
+.page-share-section h2{color:#30343a;font-size:21px;margin:0 0 4px}
+.page-share-section p{color:#66717d;font-size:14px;margin:0 0 12px}
+.page-share-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:9px}
+.page-share-actions a,.page-share-actions button{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:30px;padding:9px 18px;font:700 14px Poppins,sans-serif;text-decoration:none;cursor:pointer;color:#fff}
+.page-share-facebook{background:#1877f2}
+.page-share-whatsapp{background:#168a50}
+.page-share-copy{background:#B71819}
+.page-share-feedback{margin-top:5px;font-size:13px;color:#66717d}
+
+</style>
 </head>
 
 <body>
@@ -626,6 +638,18 @@
       <div class="modal-nav"><button id="sayingPrev">&#8592; Previous</button><button id="sayingNext">Next &#8594;</button></div>
     </div></div>
     </main>
+
+<!-- SHARE THE COMPLETE SAYINGS PAGE -->
+<section class="page-share-section" aria-labelledby="pageShareHeading">
+  <h2 id="pageShareHeading">Enjoyed this page? Share it!</h2>
+  <p>Help spread the word about Dingli Stray Cats.</p>
+  <div class="page-share-actions">
+    <a class="page-share-facebook" id="pageShareFacebook" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdinglistraycats.org%2Fmaltese-cat-sayings.html">Share on Facebook</a>
+    <a class="page-share-whatsapp" id="pageShareWhatsApp" target="_blank" rel="noopener noreferrer" href="https://api.whatsapp.com/send?text=https%3A%2F%2Fdinglistraycats.org%2Fmaltese-cat-sayings.html">WhatsApp</a>
+    <button class="page-share-copy" id="pageShareCopy" type="button">Copy Link</button>
+  </div>
+  <div class="page-share-feedback" id="pageShareFeedback" role="status" aria-live="polite"></div>
+</section>
 
 <!-- SUPPORT OUR CAT WELFARE WORK -->
 <section class="volunteer-cta" aria-labelledby="support-heading">
@@ -767,5 +791,18 @@ renderSayings();
 openSayingFromUrl();
 </script>
 
+<script>
+// Share the complete page, never a particular saying's hash or share landing page.
+(function(){
+  const url='https://dinglistraycats.org/maltese-cat-sayings.html';
+  document.getElementById('pageShareFacebook').href='https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url);
+  document.getElementById('pageShareWhatsApp').href='https://api.whatsapp.com/send?text='+encodeURIComponent('Maltese Cat Sayings & Proverbs — '+url);
+  document.getElementById('pageShareCopy').addEventListener('click',async function(){
+    const feedback=document.getElementById('pageShareFeedback');
+    try{await navigator.clipboard.writeText(url);feedback.textContent='Link copied!';}
+    catch(e){feedback.textContent='Copy this link: '+url;}
+  });
+})();
+</script>
 </body>
 </html>
